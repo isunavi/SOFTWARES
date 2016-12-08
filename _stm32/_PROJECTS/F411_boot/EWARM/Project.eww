@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\..\..\F103IMU_test\EWARM\F103IMU_test.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\F411_boot.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\FMT\EWARM\FMT.ewp</path>
+  </project>
+  <batchBuild/>
+</workspace>
+
+

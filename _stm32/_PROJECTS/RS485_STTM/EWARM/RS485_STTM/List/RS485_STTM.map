@@ -1,0 +1,524 @@
+###############################################################################
+#
+# IAR ELF Linker V7.40.3.8902/W32 for ARM                 03/Dec/2016  12:49:37
+# Copyright 2007-2015 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Exe\RS485_STTM.out
+#    Map file     =  
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM/List\RS485_STTM.map
+#    Command line =  
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\debug.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\drvStorage_STM32F030xx.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\main.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\mb.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\mbcrc.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\mbfunccoils.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\mbfuncdiag.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\mbfuncdisc.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\mbfuncholding.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\mbfuncinput.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\mbfuncother.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\mbrtu.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\mbutils.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\mod1Wire.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\modSysClock.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\portevent.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\portserial.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\porttimer.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\startup_stm32f030x6.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_cortex.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_dma.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_flash.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_flash_ex.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_gpio.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_i2c.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_i2c_ex.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_msp.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_pwr.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_pwr_ex.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_rcc.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_rcc_ex.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_tim.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_hal_tim_ex.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\stm32f0xx_it.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\sysReport.o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj\system_stm32f0xx.o
+#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull -o
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Exe\RS485_STTM.out
+#        --map
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM/List\RS485_STTM.map
+#        --config
+#        D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM/stm32f030x6_flash.icf
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x08007fff] { ro };
+"P2":  place in [from 0x20000000 to 0x20000fff] { rw, block CSTACK, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                       0xb0
+  .intvec            ro code  0x08000000    0xb0  startup_stm32f030x6.o [1]
+                            - 0x080000b0    0xb0
+
+"P1":                                     0x3050
+  .text              ro code  0x080000b0   0x880  main.o [1]
+  .text              ro code  0x08000930    0xe4  modSysClock.o [1]
+  .text              ro code  0x08000a14   0x16c  drvStorage_STM32F030xx.o [1]
+  .text              ro code  0x08000b80   0x13e  stm32f0xx_hal_cortex.o [1]
+  .text              ro code  0x08000cbe    0xe0  I32DivModFast.o [4]
+  .text              ro code  0x08000d9e     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08000da0    0x5c  stm32f0xx_hal.o [1]
+  .text              ro code  0x08000dfc    0x84  debug.o [1]
+  .text              ro code  0x08000e80   0x248  mb.o [1]
+  .text              ro code  0x080010c8    0xb0  mbfuncother.o [1]
+  .text              ro code  0x08001178   0x50c  mod1Wire.o [1]
+  .text              ro code  0x08001684   0x6f4  stm32f0xx_hal_rcc.o [1]
+  .text              ro code  0x08001d78     0x2  IntDivZer.o [4]
+  .text              ro code  0x08001d7a     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08001d7c    0x48  stm32f0xx_hal_msp.o [1]
+  .text              ro code  0x08001dc4   0x2a4  mbrtu.o [1]
+  .text              ro code  0x08002068    0x44  portevent.o [1]
+  .text              ro code  0x080020ac    0x5c  ABImemcpy.o [4]
+  .text              ro code  0x08002108   0x284  portserial.o [1]
+  .text              ro code  0x0800238c    0xec  porttimer.o [1]
+  .text              ro code  0x08002478    0x40  mbcrc.o [1]
+  .text              ro code  0x080024b8   0x2ae  mbfuncholding.o [1]
+  .text              ro code  0x08002766    0x30  mbutils.o [1]
+  .text              ro code  0x08002796     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08002798   0x204  mbfunccoils.o [1]
+  .rodata            const    0x0800299c   0x100  mbcrc.o [1]
+  .rodata            const    0x08002a9c   0x100  mbcrc.o [1]
+  .rodata            const    0x08002b9c   0x100  mod1Wire.o [1]
+  .text              ro code  0x08002c9c    0xd6  mbfuncdisc.o [1]
+  .text              ro code  0x08002d72    0xb2  mbfuncinput.o [1]
+  .text              ro code  0x08002e24    0x94  system_stm32f0xx.o [1]
+  .text              ro code  0x08002eb8    0x3c  zero_init3.o [4]
+  .text              ro code  0x08002ef4    0x38  stm32f0xx_it.o [1]
+  .text              ro code  0x08002f2c    0x30  copy_init3.o [4]
+  .text              ro code  0x08002f5c    0x28  data_init.o [4]
+  .iar.init_table    const    0x08002f84    0x24  - Linker created -
+  .text              ro code  0x08002fa8    0x1a  cmain.o [4]
+  .text              ro code  0x08002fc2     0x4  low_level_init.o [3]
+  .text              ro code  0x08002fc6     0x8  exit.o [3]
+  .text              ro code  0x08002fce     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08002fd0     0xa  cexit.o [4]
+  .text              ro code  0x08002fda     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08002fdc    0x14  exit.o [5]
+  .rodata            const    0x08002ff0    0x10  stm32f0xx_hal_rcc.o [1]
+  .rodata            const    0x08003000    0x10  stm32f0xx_hal_rcc.o [1]
+  .rodata            const    0x08003010    0x10  system_stm32f0xx.o [1]
+  .text              ro code  0x08003020    0x10  startup_stm32f030x6.o [1]
+  .text              ro code  0x08003030     0xc  cstartup_M.o [4]
+  .rodata            const    0x0800303c     0x4  main.o [1]
+  .text              ro code  0x08003040     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08003042     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08003044     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08003046     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08003048     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x0800304a     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x0800304c     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x0800304e     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08003050     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08003052     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08003054     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08003056     0x2  startup_stm32f030x6.o [1]
+  .text              ro code  0x08003058     0x2  startup_stm32f030x6.o [1]
+  .rodata            const    0x0800305a     0x0  zero_init3.o [4]
+  .rodata            const    0x0800305a     0x0  copy_init3.o [4]
+  Initializer bytes  const    0x0800305c    0xa4  <for P2 s0>
+                            - 0x08003100  0x3050
+
+"P2":                                      0x9d0
+  P2 s0                       0x20000000    0xa4  <Init block>
+    .data            inited   0x20000000    0x80  mb.o [1]
+    .data            inited   0x20000080     0x8  main.o [1]
+    .data            inited   0x20000088     0x8  main.o [1]
+    .data            inited   0x20000090     0x4  main.o [1]
+    .data            inited   0x20000094     0x4  modSysClock.o [1]
+    .data            inited   0x20000098     0x4  system_stm32f0xx.o [1]
+    .data            inited   0x2000009c     0x2  main.o [1]
+    .data            inited   0x2000009e     0x2  main.o [1]
+    .data            inited   0x200000a0     0x2  main.o [1]
+    .data            inited   0x200000a2     0x1  mb.o [1]
+  .bss               zero     0x200000a4   0x400  main.o [1]
+  .bss               zero     0x200004a4   0x100  mbrtu.o [1]
+  .bss               zero     0x200005a4    0x84  main.o [1]
+  .bss               zero     0x20000628    0x80  main.o [1]
+  .bss               zero     0x200006a8    0x40  main.o [1]
+  .bss               zero     0x200006e8    0x30  mod1Wire.o [1]
+  .bss               zero     0x20000718    0x20  main.o [1]
+  .bss               zero     0x20000738    0x20  mbfuncother.o [1]
+  .bss               zero     0x20000758     0xc  main.o [1]
+  .bss               zero     0x20000764     0x4  main.o [1]
+  .bss               zero     0x20000768     0x4  main.o [1]
+  .bss               zero     0x2000076c     0x4  main.o [1]
+  .bss               zero     0x20000770     0x4  main.o [1]
+  .bss               zero     0x20000774     0x4  main.o [1]
+  .bss               zero     0x20000778     0x4  main.o [1]
+  .bss               zero     0x2000077c     0x4  main.o [1]
+  .bss               zero     0x20000780     0x4  main.o [1]
+  .bss               zero     0x20000784     0x4  mb.o [1]
+  .bss               zero     0x20000788     0x4  mb.o [1]
+  .bss               zero     0x2000078c     0x4  mb.o [1]
+  .bss               zero     0x20000790     0x4  mb.o [1]
+  .bss               zero     0x20000794     0x4  mb.o [1]
+  .bss               zero     0x20000798     0x4  mb.o [1]
+  .bss               zero     0x2000079c     0x4  mb.o [1]
+  .bss               zero     0x200007a0     0x4  mb.o [1]
+  .bss               zero     0x200007a4     0x4  mb.o [1]
+  .bss               zero     0x200007a8     0x4  mbrtu.o [1]
+  .bss               zero     0x200007ac     0x4  modSysClock.o [1]
+  .bss               zero     0x200007b0     0x4  portserial.o [1]
+  .bss               zero     0x200007b4     0x4  stm32f0xx_hal.o [1]
+  .bss               zero     0x200007b8     0x2  mb.o [1]
+  .bss               zero     0x200007ba     0x2  mbfuncother.o [1]
+  .bss               zero     0x200007bc     0x2  mbrtu.o [1]
+  .bss               zero     0x200007be     0x2  mbrtu.o [1]
+  .bss               zero     0x200007c0     0x2  porttimer.o [1]
+  .bss               zero     0x200007c2     0x2  porttimer.o [1]
+  .bss               zero     0x200007c4     0x1  main.o [1]
+  .bss               zero     0x200007c5     0x1  mb.o [1]
+  .bss               zero     0x200007c6     0x1  mb.o [1]
+  .bss               zero     0x200007c7     0x1  mb.o [1]
+  .bss               zero     0x200007c8     0x1  mb.o [1]
+  .bss               zero     0x200007c9     0x1  mb.o [1]
+  .bss               zero     0x200007ca     0x1  mbrtu.o [1]
+  .bss               zero     0x200007cb     0x1  mbrtu.o [1]
+  .bss               zero     0x200007cc     0x1  mod1Wire.o [1]
+  .bss               zero     0x200007cd     0x1  portevent.o [1]
+  .bss               zero     0x200007ce     0x1  portevent.o [1]
+  CSTACK                      0x200007d0   0x200  <Block>
+    CSTACK           uninit   0x200007d0   0x200  <Block tail>
+                            - 0x200009d0   0x9d0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x72b:
+          0x200000a4  0x72b
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0xa4 (100% of destination):
+          0x0800305c   0xa4
+    1 destination range, total size 0xa3:
+          0x20000000   0xa3
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                    ro code  ro data  rw data
+    ------                    -------  -------  -------
+D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj: [1]
+    debug.o                       132
+    drvStorage_STM32F030xx.o      364
+    main.o                      2 176       30    1 451
+    mb.o                          584      129      172
+    mbcrc.o                        64      512
+    mbfunccoils.o                 516
+    mbfuncdisc.o                  214
+    mbfuncholding.o               686
+    mbfuncinput.o                 178
+    mbfuncother.o                 176                34
+    mbrtu.o                       676               266
+    mbutils.o                      48
+    mod1Wire.o                  1 292      256       49
+    modSysClock.o                 228        4        8
+    portevent.o                    68                 2
+    portserial.o                  644                 4
+    porttimer.o                   236                 4
+    startup_stm32f030x6.o         228
+    stm32f0xx_hal.o                92                 4
+    stm32f0xx_hal_cortex.o        318
+    stm32f0xx_hal_msp.o            72
+    stm32f0xx_hal_rcc.o         1 780       32
+    stm32f0xx_it.o                 56
+    system_stm32f0xx.o            148       20        4
+    ---------------------------------------------------
+    Total:                     10 976      983    1 998
+
+command line: [2]
+    ---------------------------------------------------
+    Total:
+
+dl6M_tlf.a: [3]
+    exit.o                          8
+    low_level_init.o                4
+    ---------------------------------------------------
+    Total:                         12
+
+rt6M_tl.a: [4]
+    ABImemcpy.o                    92
+    I32DivModFast.o               224
+    IntDivZer.o                     2
+    cexit.o                        10
+    cmain.o                        26
+    copy_init3.o                   48
+    cstartup_M.o                   12
+    data_init.o                    40
+    zero_init3.o                   60
+    ---------------------------------------------------
+    Total:                        514
+
+shb_l.a: [5]
+    exit.o                         20
+    ---------------------------------------------------
+    Total:                         20
+
+    Linker created                          39      512
+-------------------------------------------------------
+    Grand Total:               11 522    1 022    2 510
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x08002f84          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x08002fa8          --   Gb  - Linker created -
+?main                   0x08002fa9         Code  Gb  cmain.o [4]
+ADC_filter_buf          0x200005a4   0x84  Data  Gb  main.o [1]
+AHBPrescTable           0x08003010   0x10  Data  Gb  system_stm32f0xx.o [1]
+CSTACK$$Base            0x200007d0          --   Gb  - Linker created -
+CSTACK$$Limit           0x200009d0          --   Gb  - Linker created -
+Error_Handler           0x0800092d    0x4  Code  Gb  main.o [1]
+HAL_GetTick             0x08000ded    0x6  Code  Wk  stm32f0xx_hal.o [1]
+HAL_IncTick             0x08000de1    0xc  Code  Wk  stm32f0xx_hal.o [1]
+HAL_Init                0x08000da1   0x1c  Code  Gb  stm32f0xx_hal.o [1]
+HAL_InitTick            0x08000dbd   0x24  Code  Wk  stm32f0xx_hal.o [1]
+HAL_MspInit             0x08001d7d   0x48  Code  Gb  stm32f0xx_hal_msp.o [1]
+HAL_NVIC_EnableIRQ      0x08000c5f    0xe  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HAL_NVIC_SetPriority    0x08000c4b   0x14  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HAL_RCC_ClockConfig     0x08001b4d  0x15e  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_RCC_GetHCLKFreq     0x08001d41    0x6  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_RCC_GetSysClockFreq
+                        0x08001cc1   0x80  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_RCC_OscConfig       0x08001685  0x4aa  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_SYSTICK_CLKSourceConfig
+                        0x08000c79   0x22  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HAL_SYSTICK_Callback    0x08000cbd    0x2  Code  Wk  stm32f0xx_hal_cortex.o [1]
+HAL_SYSTICK_Config      0x08000c6d    0xc  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HAL_SYSTICK_IRQHandler  0x08000cb5    0x8  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HardFault_Handler       0x08002f15    0x4  Code  Gb  stm32f0xx_it.o [1]
+ID                      0x20000758    0xc  Data  Gb  main.o [1]
+NMI_Handler             0x08002ef5   0x1c  Code  Gb  stm32f0xx_it.o [1]
+NVIC_EnableIRQ          0x08002109    0xe  Code  Lc  portserial.o [1]
+NVIC_EnableIRQ          0x08000b81    0xe  Code  Lc  stm32f0xx_hal_cortex.o [1]
+NVIC_SetPriority        0x08002117   0x8a  Code  Lc  portserial.o [1]
+NVIC_SetPriority        0x08000b8f   0x8a  Code  Lc  stm32f0xx_hal_cortex.o [1]
+OW_init                 0x0800118b   0x3c  Code  Gb  mod1Wire.o [1]
+OW_itt                  0x200007cc    0x1  Data  Gb  mod1Wire.o [1]
+PendSV_Handler          0x08002f1b    0x2  Code  Gb  stm32f0xx_it.o [1]
+Region$$Table$$Base     0x08002f84          --   Gb  - Linker created -
+Region$$Table$$Limit    0x08002fa8          --   Gb  - Linker created -
+SVC_Handler             0x08002f19    0x2  Code  Gb  stm32f0xx_it.o [1]
+SysTick_Config          0x08000c19   0x32  Code  Lc  stm32f0xx_hal_cortex.o [1]
+SysTick_Handler         0x08002f1d   0x10  Code  Gb  stm32f0xx_it.o [1]
+SystemClock_Config      0x080008b5   0x78  Code  Gb  main.o [1]
+SystemCoreClock         0x20000098    0x4  Data  Gb  system_stm32f0xx.o [1]
+SystemInit              0x08002e25   0x68  Code  Gb  system_stm32f0xx.o [1]
+TIM16_IRQHandler        0x0800241b   0x36  Code  Gb  porttimer.o [1]
+UART_IRQ_Handler        0x080022cd   0x68  Code  Gb  portserial.o [1]
+UID                     0x20000090    0x4  Data  Lc  main.o [1]
+USART1_IRQHandler       0x08002385    0x8  Code  Gb  portserial.o [1]
+USART1_errCount         0x200007b0    0x4  Data  Gb  portserial.o [1]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x20000fff          --   Gb  command line/config [2]
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x20000000          --   Gb  command line/config [2]
+__aeabi_idiv            0x08000ceb         Code  Gb  I32DivModFast.o [4]
+__aeabi_idiv0           0x08001d79         Code  Gb  IntDivZer.o [4]
+__aeabi_idivmod         0x08000ceb         Code  Gb  I32DivModFast.o [4]
+__aeabi_memcpy          0x080020ad         Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4         0x080020d5         Code  Wk  ABImemcpy.o [4]
+__aeabi_uidiv           0x08000cf1         Code  Gb  I32DivModFast.o [4]
+__aeabi_uidivmod        0x08000cf1         Code  Gb  I32DivModFast.o [4]
+__cmain                 0x08002fa9         Code  Gb  cmain.o [4]
+__exit                  0x08002fdd   0x14  Code  Gb  exit.o [5]
+__iar_copy_init3        0x08002f2d   0x30  Code  Gb  copy_init3.o [4]
+__iar_data_init3        0x08002f5d   0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x08003031         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3        0x08002eb9   0x3c  Code  Gb  zero_init3.o [4]
+__low_level_init        0x08002fc3    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000         Data  Gb  startup_stm32f030x6.o [1]
+_call_main              0x08002fb5         Code  Gb  cmain.o [4]
+_debug_init             0x08000dfd   0x22  Code  Gb  debug.o [1]
+_delay_init             0x08000e1f   0x16  Code  Gb  debug.o [1]
+_delay_us               0x08000e35   0x2a  Code  Gb  debug.o [1]
+_exit                   0x08002fd1         Code  Gb  cexit.o [4]
+_main                   0x08002fbf         Code  Gb  cmain.o [4]
+adc_copy                0x20000628   0x80  Data  Gb  main.o [1]
+aucCRCHi                0x0800299c  0x100  Data  Lc  mbcrc.o [1]
+aucCRCLo                0x08002a9c  0x100  Data  Lc  mbcrc.o [1]
+cnt_test                0x2000077c    0x4  Data  Gb  main.o [1]
+compile_date            0x20000080    0x8  Data  Lc  main.o [1]
+compile_version         0x2000009c    0x2  Data  Lc  main.o [1]
+crc16_CITT              0x080000b1   0x3a  Code  Gb  main.o [1]
+crc8DS_table            0x08002b9c  0x100  Data  Lc  mod1Wire.o [1]
+crc8_DS_s               0x08001179   0x12  Code  Gb  mod1Wire.o [1]
+currentTime             0x200007ac    0x4  Data  Lc  modSysClock.o [1]
+delay_blink             0x20000768    0x4  Data  Gb  main.o [1]
+delay_eeprom_write      0x20000780    0x4  Data  Gb  main.o [1]
+delay_get_in            0x20000770    0x4  Data  Gb  main.o [1]
+delay_get_temp          0x20000774    0x4  Data  Gb  main.o [1]
+delay_set_out           0x2000076c    0x4  Data  Gb  main.o [1]
+delay_set_zero          0x20000778    0x4  Data  Gb  main.o [1]
+downcounter             0x200007c2    0x2  Data  Lc  porttimer.o [1]
+eMBCurrentMode          0x200007c6    0x1  Data  Lc  mb.o [1]
+eMBEnable               0x08000f23   0x24  Code  Gb  mb.o [1]
+eMBFuncReadCoils        0x08002799   0xd8  Code  Gb  mbfunccoils.o [1]
+eMBFuncReadDiscreteInputs
+                        0x08002c9d   0xd6  Code  Gb  mbfuncdisc.o [1]
+eMBFuncReadHoldingRegister
+                        0x0800258f   0xae  Code  Gb  mbfuncholding.o [1]
+eMBFuncReadInputRegister
+                        0x08002d73   0xb2  Code  Gb  mbfuncinput.o [1]
+eMBFuncReadWriteMultipleHoldingRegister
+                        0x0800263d  0x12a  Code  Gb  mbfuncholding.o [1]
+eMBFuncReportSlaveID    0x08001149   0x26  Code  Gb  mbfuncother.o [1]
+eMBFuncWriteCoil        0x08002871   0x7c  Code  Gb  mbfunccoils.o [1]
+eMBFuncWriteHoldingRegister
+                        0x080024b9   0x4c  Code  Gb  mbfuncholding.o [1]
+eMBFuncWriteMultipleCoils
+                        0x080028ed   0xac  Code  Gb  mbfunccoils.o [1]
+eMBFuncWriteMultipleHoldingRegister
+                        0x08002505   0x8a  Code  Gb  mbfuncholding.o [1]
+eMBInit                 0x08000e81   0xa2  Code  Gb  mb.o [1]
+eMBPoll                 0x08000f89  0x114  Code  Gb  mb.o [1]
+eMBRTUInit              0x08001dc5   0x58  Code  Gb  mbrtu.o [1]
+eMBRTUReceive           0x08001e4b   0x48  Code  Gb  mbrtu.o [1]
+eMBRTUSend              0x08001e93   0x92  Code  Gb  mbrtu.o [1]
+eMBRTUStart             0x08001e1d   0x1a  Code  Gb  mbrtu.o [1]
+eMBRTUStop              0x08001e37   0x14  Code  Gb  mbrtu.o [1]
+eMBRegCoilsCB           0x08000361    0xa  Code  Gb  main.o [1]
+eMBRegDiscreteCB        0x0800036b    0x6  Code  Gb  main.o [1]
+eMBRegHoldingCB         0x08000299   0xb8  Code  Gb  main.o [1]
+eMBRegInputCB           0x08000249   0x50  Code  Gb  main.o [1]
+eMBSetSlaveID           0x080010c9   0x80  Code  Gb  mbfuncother.o [1]
+eMBState                0x200000a2    0x1  Data  Lc  mb.o [1]
+eQueuedEvent            0x200007cd    0x1  Data  Lc  portevent.o [1]
+eRcvState               0x200007cb    0x1  Data  Lc  mbrtu.o [1]
+eSndState               0x200007ca    0x1  Data  Lc  mbrtu.o [1]
+eStatus                 0x200007c4    0x1  Data  Gb  main.o [1]
+eeprom2regs             0x08000103   0x1e  Code  Gb  main.o [1]
+eeprom_buf              0x200000a4  0x400  Data  Lc  main.o [1]
+exit                    0x08002fc7    0x8  Code  Gb  exit.o [3]
+filter_median           0x08000551   0x6a  Code  Gb  main.o [1]
+firmware_date           0x20000088    0x8  Data  Lc  main.o [1]
+getTemp                 0x08001323  0x240  Code  Lc  mod1Wire.o [1]
+halADC_init             0x08000439   0xba  Code  Gb  main.o [1]
+halEEPROM_commit        0x0800013f   0x74  Code  Gb  main.o [1]
+halEEPROM_init          0x080001b3   0x96  Code  Gb  main.o [1]
+halEEPROM_read16        0x080000eb    0xa  Code  Gb  main.o [1]
+halEEPROM_write16       0x080000f5    0xe  Code  Gb  main.o [1]
+halFLASH_FlashWord16Prog
+                        0x08000aeb   0x78  Code  Gb  drvStorage_STM32F030xx.o [1]
+halFLASH_erase_check    0x08000ac5   0x26  Code  Gb  drvStorage_STM32F030xx.o [1]
+halFLASH_erase_page     0x08000a55   0x70  Code  Gb  drvStorage_STM32F030xx.o [1]
+halFLASH_lock           0x08000a35   0x20  Code  Gb  drvStorage_STM32F030xx.o [1]
+halFLASH_read16         0x08000b7d    0x4  Code  Gb  drvStorage_STM32F030xx.o [1]
+halFLASH_unlock         0x08000a15   0x20  Code  Gb  drvStorage_STM32F030xx.o [1]
+halRCC_init             0x08000371   0xc0  Code  Gb  main.o [1]
+m1Wire                  0x200006e8   0x30  Data  Gb  mod1Wire.o [1]
+main                    0x08000611  0x22a  Code  Gb  main.o [1]
+mod1Wire_Master_getTemperature
+                        0x08001563   0x48  Code  Gb  mod1Wire.o [1]
+mod1Wire_initMaster     0x080015b1   0x58  Code  Gb  mod1Wire.o [1]
+mod1Wire_resetWire      0x080011c7   0x72  Code  Gb  mod1Wire.o [1]
+mod1Wire_runMaster      0x08001609   0x34  Code  Gb  mod1Wire.o [1]
+mod1Wire_xBit           0x08001239   0x86  Code  Gb  mod1Wire.o [1]
+mod1Wire_xByte          0x080012d9   0x4a  Code  Gb  mod1Wire.o [1]
+modSysClockPeriod       0x20000094    0x4  Data  Lc  modSysClock.o [1]
+modSysClock_formatTime  0x0800097f   0x60  Code  Gb  modSysClock.o [1]
+modSysClock_getPastTime
+                        0x0800094d   0x32  Code  Gb  modSysClock.o [1]
+modSysClock_getTime     0x08000947    0x6  Code  Gb  modSysClock.o [1]
+modSysClock_run         0x08000937   0x10  Code  Gb  modSysClock.o [1]
+modSysClock_setRunPeriod
+                        0x08000931    0x6  Code  Gb  modSysClock.o [1]
+modSysClock_timeout     0x080009ed   0x28  Code  Gb  modSysClock.o [1]
+peMBFrameReceiveCur     0x20000790    0x4  Data  Lc  mb.o [1]
+peMBFrameSendCur        0x20000784    0x4  Data  Lc  mb.o [1]
+prveMBError2Exception   0x08002767   0x30  Code  Gb  mbutils.o [1]
+prvvTIMERExpiredISR     0x08002419    0x2  Code  Lc  porttimer.o [1]
+pucSndBufferCur         0x200007a8    0x4  Data  Lc  mbrtu.o [1]
+pvMBFrameCloseCur       0x20000794    0x4  Data  Lc  mb.o [1]
+pvMBFrameStartCur       0x20000788    0x4  Data  Lc  mb.o [1]
+pvMBFrameStopCur        0x2000078c    0x4  Data  Lc  mb.o [1]
+pxMBFrameCBByteReceived
+                        0x20000798    0x4  Data  Gb  mb.o [1]
+pxMBFrameCBTransmitterEmpty
+                        0x2000079c    0x4  Data  Gb  mb.o [1]
+pxMBPortCBTimerExpired  0x200007a0    0x4  Data  Gb  mb.o [1]
+regs2eeprom             0x08000121   0x1e  Code  Gb  main.o [1]
+shell_sort              0x08000501   0x50  Code  Gb  main.o [1]
+timeout                 0x200007c0    0x2  Data  Lc  porttimer.o [1]
+tmpS32                  0x20000764    0x4  Data  Gb  main.o [1]
+ucMBAddress             0x200007c5    0x1  Data  Lc  mb.o [1]
+ucMBSlaveID             0x20000738   0x20  Data  Lc  mbfuncother.o [1]
+ucRTUBuf                0x200004a4  0x100  Data  Gb  mbrtu.o [1]
+ucSlaveID               0x0800303c    0x4  Data  Gb  main.o [1]
+usMBCRC16               0x08002479   0x40  Code  Gb  mbcrc.o [1]
+usMBSlaveIDLen          0x200007ba    0x2  Data  Lc  mbfuncother.o [1]
+usRcvBufferPos          0x200007be    0x2  Data  Lc  mbrtu.o [1]
+usRegHoldingBuf         0x20000718   0x20  Data  Lc  main.o [1]
+usRegHoldingStart       0x200000a0    0x2  Data  Lc  main.o [1]
+usRegInputBuf           0x200006a8   0x40  Data  Lc  main.o [1]
+usRegInputStart         0x2000009e    0x2  Data  Lc  main.o [1]
+usSndBufferCount        0x200007bc    0x2  Data  Lc  mbrtu.o [1]
+uwTick                  0x200007b4    0x4  Data  Gb  stm32f0xx_hal.o [1]
+vMBPortSerialEnable     0x080021a1   0x52  Code  Gb  portserial.o [1]
+vMBPortTimersDisable    0x0800240b    0xe  Code  Gb  porttimer.o [1]
+vMBPortTimersEnable     0x080023f5   0x16  Code  Gb  porttimer.o [1]
+xEventInQueue           0x200007ce    0x1  Data  Lc  portevent.o [1]
+xFuncHandlers           0x20000000   0x80  Data  Lc  mb.o [1]
+xMBPortEventGet         0x08002083   0x22  Code  Gb  portevent.o [1]
+xMBPortEventInit        0x08002069    0xa  Code  Gb  portevent.o [1]
+xMBPortEventPost        0x08002073   0x10  Code  Gb  portevent.o [1]
+xMBPortSerialGetByte    0x080022c1    0xc  Code  Gb  portserial.o [1]
+xMBPortSerialInit       0x080021f3   0xc2  Code  Gb  portserial.o [1]
+xMBPortSerialPutByte    0x080022b5    0xc  Code  Gb  portserial.o [1]
+xMBPortTimersInit       0x0800238d   0x68  Code  Gb  porttimer.o [1]
+xMBRTUReceiveFSM        0x08001f25   0x84  Code  Gb  mbrtu.o [1]
+xMBRTUTimerT35Expired   0x08002009   0x3c  Code  Gb  mbrtu.o [1]
+xMBRTUTransmitFSM       0x08001fa9   0x60  Code  Gb  mbrtu.o [1]
+
+
+[1] = D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\RS485_STTM\Obj
+[2] = command line
+[3] = dl6M_tlf.a
+[4] = rt6M_tl.a
+[5] = shb_l.a
+
+  11 522 bytes of readonly  code memory
+   1 022 bytes of readonly  data memory
+   2 510 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

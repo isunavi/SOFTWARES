@@ -1,0 +1,5 @@
+http://psi-logic.narod.ru/fft/fft.htm
+http://stackoverflow.com/questions/6663222/doing-fft-in-realtime?rq=1
+http://www-ee.uta.edu/eeweb/ip/Courses/DSP_new/Programs/fft.cpp
+http://we.easyelectronics.ru/lcd_gfx/biblioteka-dlya-dekodirovaniya-jpeg-na-mk.html
+http://we.easyelectronics.ru/CADSoft/fastfont---samopisnaya-risovalka-rastrovyh-shriftov.html

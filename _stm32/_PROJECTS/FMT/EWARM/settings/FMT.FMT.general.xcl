@@ -1,0 +1,15 @@
+"D:\program\IAR Systems\Embedded Workbench 7.2\arm\bin\armproc.dll" 
+
+"D:\program\IAR Systems\Embedded Workbench 7.2\arm\bin\armstlink.dll" 
+
+"D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\FMT\EWARM\FMT/Exe\FMT.out" 
+
+--plugin "D:\program\IAR Systems\Embedded Workbench 7.2\arm\bin\armbat.dll" 
+
+--device_macro "D:\program\IAR Systems\Embedded Workbench 7.2\arm\config\debugger\ST\STM32F4xx.dmac" 
+
+--flash_loader "D:\program\IAR Systems\Embedded Workbench 7.2\arm\config\flashloader\ST\FlashSTM32F4xxx.board" 
+
+
+
+
