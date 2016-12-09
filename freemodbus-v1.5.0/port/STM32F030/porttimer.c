@@ -34,6 +34,7 @@ static void prvvTIMERExpiredISR (void);
 
 static uint16_t timeout = 0;
 static uint16_t downcounter = 0;
+extern uint16_t *modbus_delay;
 
 
 /* ----------------------- Start implementation -----------------------------*/
@@ -41,22 +42,16 @@ BOOL xMBPortTimersInit (USHORT usTim1Timerout50us)
 {
 
 	RCC->APB2ENR |= RCC_APB2ENR_TIM16EN; /* (1) */
-
 	 // 16.000.000MHz / 128 / 125 = 1000
     TIM16->CR1 = 0;
-    TIM16->CR1 |= TIM_CR1_ARPE;//Включен режим предварительной записи регистра автоперезагрузки
+    TIM16->CR1 |= TIM_CR1_ARPE; //Включен режим предварительной записи регистра автоперезагрузки
 	TIM16->PSC = 48 - 1;
-	TIM16->ARR = 7; /* (2) */
-	TIM16->CCR1 = 5; /* (3) */
-
 	TIM16->ARR = 50; //50us, 20.000 kHz
-	TIM16->EGR |= TIM_EGR_UG; //Генерируем Событие обновления для записи данных в регистры PSC и ARR
-	TIM16->CR1 |= (TIM_CR1_CEN | TIM_CR1_OPM); //Запускаем таймер записью бита CEN и устанавливаем режим Одного прохода установкой бита OPM
-	//while ((TIM2->CR1 & TIM_CR1_CEN) != 0) {};
+    TIM16->DIER |= TIM_DIER_UIE;
 
-    HAL_NVIC_SetPriority (TIM16_IRQn, 0, 0);
+    HAL_NVIC_SetPriority (TIM16_IRQn, 1, 1);
     HAL_NVIC_EnableIRQ (TIM16_IRQn);
-    
+
 	/*
     htim.Instance = TIM16;
 	htim.Init.CounterMode = TIM_COUNTERMODE_UP;
@@ -64,15 +59,16 @@ BOOL xMBPortTimersInit (USHORT usTim1Timerout50us)
 	htim.Init.Period = 50 - 1;
 
 
-	timeout = usTim1Timerout50us + 1;//2000; //ZAY - +20ms? тому что не успевал центральный контроллер перевести линию с передачи на прием и наш пакет ответа терялся?
-
     return HAL_OK == HAL_TIM_Base_Init (&htim) ? TRUE : FALSE;
     */
+
+	timeout = usTim1Timerout50us + 20;//*modbus_delay; //2000; //ZAY - +20ms? тому что не успевал центральный контроллер перевести линию с передачи на прием и наш пакет ответа терялся?
+
 	return TRUE;
 }
 
 
-//inline 
+//inline
 void
 vMBPortTimersEnable ()
 {
@@ -80,7 +76,9 @@ vMBPortTimersEnable ()
 	downcounter = timeout;
 	//HAL_TIM_Base_Start_IT(&htim);
     // TIM_DIER_UIE
-    TIM16->DIER |= TIM_DIER_UIE;
+    //TIM16->DIER |= TIM_DIER_UIE;
+    TIM16->CNT = 0;
+    TIM16->CR1 |= TIM_CR1_CEN; //timer on
 }
 
 //inline
@@ -89,7 +87,7 @@ vMBPortTimersDisable ()
 {
     /* Disable any pending timers. */
 	//HAL_TIM_Base_Stop_IT(&htim);
-    TIM16->DIER &= ~TIM_DIER_UIE;
+     TIM16->CR1 &= ~TIM_CR1_CEN; //timer off
 }
 
 /* Create an ISR which is called whenever the timer has expired. This function
@@ -98,7 +96,7 @@ vMBPortTimersDisable ()
  */
 static void prvvTIMERExpiredISR (void)
 {
-    //( void )pxMBPortCBTimerExpired(  );
+    (void) pxMBPortCBTimerExpired ();
 }
 
 
@@ -107,12 +105,12 @@ void TIM16_IRQHandler(void)
     volatile uint16_t status;
 
     status = TIM16->SR;
-    if ((TIM_SR_UIF & status) != 0)
+    if (((TIM_SR_UIF & status) != 0) && ((TIM16->DIER & TIM_DIER_UIE) != 0))
     {
-        TIM16->SR &= ~TIM_DIER_UIE;
+        TIM16->SR &= ~TIM_SR_UIF;
         if (!--downcounter)
         {
-			prvvTIMERExpiredISR();
+			prvvTIMERExpiredISR ();
         }
     }
 }

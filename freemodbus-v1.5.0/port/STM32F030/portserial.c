@@ -32,6 +32,11 @@
 //extern UART_HandleTypeDef huart1;
 uint32_t USART1_errCount;
 
+void halUSART1_setBaud (uint32_t baud)
+{                 
+    baud = (48000000UL) / baud;
+    USART1->BRR =  baud;
+}
 
 
 /* ----------------------- Start implementation -----------------------------*/
@@ -40,7 +45,7 @@ void vMBPortSerialEnable (BOOL xRxEnable, BOOL xTxEnable)
     /* If xRXEnable enable serial receive interrupts. If xTxENable enable
      * transmitter empty interrupts.
      */
-	if (xRxEnable)
+	if (xRxEnable)  //recive
 	{
 		//HAL_GPIO_WritePin (DE_Port, DE_Pin, GPIO_PIN_RESET);
 		GPIO_USART1_DIR_L;
@@ -53,7 +58,7 @@ void vMBPortSerialEnable (BOOL xRxEnable, BOOL xTxEnable)
 		USART1->CR1 &= ~USART_CR1_RXNEIE;
 	}
 
-	if (xTxEnable)
+	if (xTxEnable) //transmitt
 	{
 		GPIO_USART1_DIR_H;
 		USART1->CR1 |= USART_CR1_TXEIE;
@@ -92,30 +97,18 @@ BOOL xMBPortSerialInit (UCHAR ucPORT,
     GPIOB->MODER = (GPIOB->MODER & ~(GPIO_MODER_MODER1)) | (GPIO_MODER_MODER1_0);
     GPIO_USART1_DIR_L; //DIR RX - on
 
+    vMBPortSerialEnable ( TRUE, FALSE);
 
     /* Enable the peripheral clock USART1 */
     RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
 
     /* Configure USART1 */
-    /* (1) oversampling by 16, 9600 baud */
-    /* (3) 8 data bit, 1 start bit, 1 stop bit, no parity, reception and transmission enabled */
-    USART1->BRR = 480000 / 96; /* (1) */
-
-    //uint32_t temp, fck;
-    //fck = 48000000;
-    //temp = fck + (ulBaudRate >> 1);
-    //temp /= ulBaudRate;
-    USART1->BRR = (48000000 << 4) / ulBaudRate; //temp;
-
-
-    USART1->CR1 = USART_CR1_TE | USART_CR1_RXNEIE | USART_CR1_RE | USART_CR1_UE; /* (3) */
-
-    while ((USART1->ISR & USART_ISR_TC) != USART_ISR_TC) /* polling idle frame Transmission */
+    if ((110 > ulBaudRate) && (921600 < ulBaudRate))
     {
-        /* add time out here for a robust application */
+        ulBaudRate = 9600;
     }
-    USART1->ICR |= USART_ICR_TCCF;/* Clear TC flag */
-    //USART1->CR1 |= USART_CR1_TCIE;/* Enable TC interrupt */
+    halUSART1_setBaud (ulBaudRate);
+
 
     /* Configure IT */
     /* (4) Set priority for USART1_IRQn */
@@ -123,6 +116,21 @@ BOOL xMBPortSerialInit (UCHAR ucPORT,
     NVIC_SetPriority (USART1_IRQn, 0); /* (3) */
     NVIC_EnableIRQ (USART1_IRQn); /* (4) */
 
+    USART1->CR1  |=   USART_CR1_UE;                      //Включение модуля USART2
+    USART1->CR1  |=   USART_CR1_TE;                      //Включение передатчика
+    USART1->CR1  |=   USART_CR1_RE;                      //Включение приемника
+    
+    //USART1->CR1 = USART_CR1_TE | USART_CR1_RXNEIE | USART_CR1_RE | USART_CR1_UE;/
+
+    //while ((USART1->ISR & USART_ISR_TC) != USART_ISR_TC) /* polling idle frame Transmission */
+    {
+        /* add time out here for a robust application */
+    }
+    //USART1->ICR |= USART_ICR_TCCF;/* Clear TC flag */
+    //USART1->CR1 |= USART_CR1_TCIE;/* Enable TC interrupt */
+    
+    USART1->CR1 |= USART_CR1_RXNEIE;
+    
 
 	/*
 
@@ -176,27 +184,27 @@ BOOL xMBPortSerialGetByte (CHAR * pucByte)
     return TRUE;
 }
 
-BOOL UART_IRQ_Handler(void) //USART_TypeDef * usart)
+
+/**
+* @brief This function handles USART1 global interrupt.
+*/
+void USART1_IRQHandler(void)
 {
 	volatile uint16_t status;
 
 	status = USART1->ISR;
-    if ((USART_ISR_TXE & status) != 0)
-    { // Проверяем, действительно ли прерывание вызвано окончанием передачи
-        USART1_LED_INV; // инвертируем индикацию
-		pxMBFrameCBByteReceived();
-		//__HAL_UART_SEND_REQ (&huart1, UART_RXDATA_FLUSH_REQUEST);
-		return TRUE;
-
-    }
-    if ((USART_ISR_RXNE & status) != 0)
+     // Проверяем, действительно ли прерывание вызвано приемом байта
+    if (((USART_ISR_RXNE & status) != 0) && ((USART1->CR1 & USART_CR1_RXNEIE) != 0))
     {
         USART1_LED_INV; // инвертируем индикацию
-        pxMBFrameCBByteReceived ();
-		//__HAL_UART_SEND_REQ (&huart1, UART_RXDATA_FLUSH_REQUEST);
-		return TRUE;
+		pxMBFrameCBByteReceived ();
     }
-
+     // Проверяем, действительно ли прерывание вызвано окончанием передачи
+    if (((USART_ISR_TXE & status) != 0) && ((USART1->CR1 & USART_CR1_TXEIE) != 0))
+    {
+        USART1_LED_INV; // инвертируем индикацию
+        pxMBFrameCBTransmitterEmpty ();
+    }
     if ((USART_ISR_NE & status)  /*!<Noise Error Flag */
         || (USART_ISR_FE & status)  /*!<Framing Error */
         || (USART_ISR_PE & status)  /*!<Parity Error */
@@ -206,31 +214,5 @@ BOOL UART_IRQ_Handler(void) //USART_TypeDef * usart)
     	USART1->ISR &= ~USART_ISR_ORE;
         USART1_errCount++;
     }
-
-	/*
-	//if (usart == huart.Instance) 
-    {
-		if((__HAL_UART_GET_IT (&huart1, UART_IT_RXNE) != RESET) && (__HAL_UART_GET_IT_SOURCE(&huart1, UART_IT_RXNE) != RESET)) {
-			pxMBFrameCBByteReceived();
-			__HAL_UART_SEND_REQ(&huart1, UART_RXDATA_FLUSH_REQUEST);
-			return TRUE;
-		}
-		if((__HAL_UART_GET_IT (&huart1, UART_IT_TXE) != RESET) &&(__HAL_UART_GET_IT_SOURCE(&huart1, UART_IT_TXE) != RESET)) {
-			pxMBFrameCBTransmitterEmpty();
-			return TRUE;
-		}
-	}
-    */
-
-	return FALSE;
-}
-
-
-/**
-* @brief This function handles USART1 global interrupt.
-*/
-void USART1_IRQHandler(void)
-{
-	UART_IRQ_Handler ();
 }
 

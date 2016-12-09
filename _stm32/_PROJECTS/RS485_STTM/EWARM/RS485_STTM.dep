@@ -6,118 +6,122 @@
   <configuration>
     <name>RS485_STTM</name>
     <outputs>
-      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_it.o</file>
-      <file>$PROJ_DIR$\..\Drivers\CMSIS\Include\core_cm0.h</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mod1Wire.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\inttypes.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbcrc.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_rcc.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_msp.o</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\sysReport.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h</file>
-      <file>$PROJ_DIR$\..\Inc\board.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\system_stm32f0xx.pbi</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h</file>
       <file>$PROJ_DIR$\..\..\..\..\_modules\debug.c</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_pwr.o</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_flash_ex.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\porttimer.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_i2c.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_rcc_ex.o</file>
+      <file>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Source\Templates\iar\startup_stm32f030x6.s</file>
+      <file>$PROJ_DIR$\..\Inc\board.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\modSysClock.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\system_stm32f0xx.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_flash_ex.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_dma.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mb.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\startup_stm32f030x6.o</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbcrc.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_gpio.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\portevent.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncholding.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_msp.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_rcc.pbi</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncholding.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_rcc_ex.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_tim.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal.o</file>
+      <file>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\main.o</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_it.pbi</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\mbutils.o</file>
       <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_rcc.__cstat.et</file>
+      <file>$PROJ_DIR$\..\Inc\main.h</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\modSysClock.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\portevent.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_msp.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\sysReport.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_pwr_ex.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_pwr_ex.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_dma.o</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_i2c.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_i2c_ex.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\inttypes.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncdiag.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\sysReport.pbi</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr_ex.h</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mb.o</file>
+      <file>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_flash_ex.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbrtu.__cstat.et</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfunccoils.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncinput.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncdisc.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\portevent.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfunccoils.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncdisc.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncdisc.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal.h</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\lib\m6M_tl.a</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncholding.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_i2c_ex.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$TOOLKIT_DIR$\lib\rt6M_tl.a</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_flash.o</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_rcc.o</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_flash.pbi</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\rtu\mbrtu.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbutils.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\include\mbutils.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\port.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\portevent.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\portserial.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\porttimer.c</file>
-      <file>$PROJ_DIR$\..\Src\main.c</file>
-      <file>$PROJ_DIR$\..\Src\stm32f0xx_it.c</file>
-      <file>$PROJ_DIR$\..\Src\stm32f0xx_hal_msp.c</file>
-      <file>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncdiag.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfunccoils.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_i2c_ex.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_rcc_ex.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\sysReport.o</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\[ROOT_NODE]</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_cortex.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mod1Wire.o</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_i2c_ex.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_i2c.o</file>
       <file>$PROJ_DIR$\RS485_STTM\Exe\RS485_STTM.out</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbcrc.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncdisc.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncholding.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_tim.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbrtu.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncother.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncinput.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_tim_ex.o</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfunccoils.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncdiag.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncdisc.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncholding.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncinput.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncother.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\include\mbproto.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\rtu\mbrtu.c</file>
+      <file>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\system_stm32f0xx.h</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_pwr.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\_modules\pt-1.4\lc.h</file>
+      <file>$PROJ_DIR$\..\Drivers\CMSIS\Include\core_cmInstr.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncinput.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_gpio.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\drvStorage_STM32F030xx.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_cortex.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal.__cstat.et</file>
+      <file>$PROJ_DIR$\..\Drivers\CMSIS\Include\core_cmFunc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_pwr.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_i2c.__cstat.et</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\drvStorage_STM32F030xx.o</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\debug.o</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\debug.pbi</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_msp.pbi</file>
-      <file>$PROJ_DIR$\..\Drivers\CMSIS\Include\core_cmInstr.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\drvStorage_STM32F030xx.pbi</file>
-      <file>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\system_stm32f0xx.h</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash_ex.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncother.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_gpio.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\portserial.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfunccoils.o</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma_ex.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncinput.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncdisc.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\main.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\RS485_STTM.pbd</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\[ROOT_NODE]</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_tim_ex.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_i2c.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\system_stm32f0xx.pbi</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\system_stm32f0xx.o</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr_ex.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc_ex.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim_ex.c</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mbrtu.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_cortex.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\sysReport.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\assert.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_i2c_ex.pbi</file>
+      <file>$PROJ_DIR$\..\Drivers\CMSIS\Include\core_cm0.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\portserial.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\mbutils.pbi</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_cortex.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_dma.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_gpio.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash_ex.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c.c</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c_ex.c</file>
-      <file>$PROJ_DIR$\..\Inc\stm32f0xx_hal_conf.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mod1Wire.pbi</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_cortex.pbi</file>
-      <file>$PROJ_DIR$\..\Drivers\CMSIS\Include\core_cmFunc.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_tim_ex.__cstat.et</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_def.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_cortex.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbcrc.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\drvStorage_STM32F030xx.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncdiag.o</file>
+      <file>$PROJ_DIR$\..\..\..\..\_modules\debug.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\_modules\drivers\drvStorage.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\_modules\mod1Wire\mod1Wire.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\_modules\drivers\drvStorage_STM32F030xx.c</file>
       <file>$PROJ_DIR$\..\..\..\..\_modules\mod1Wire\mod1Wire.h</file>
       <file>$PROJ_DIR$\..\..\..\..\_modules\modSysClock\modSysClock.c</file>
       <file>$PROJ_DIR$\..\..\..\..\_modules\modSysClock\modSysClock.h</file>
@@ -129,530 +133,173 @@
       <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\include\mbconfig.h</file>
       <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\rtu\mbcrc.c</file>
       <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\rtu\mbcrc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\rtu\mbrtu.c</file>
       <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\include\mbframe.h</file>
       <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\include\mbfunc.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfunccoils.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncdiag.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncdisc.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncholding.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncinput.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncother.c</file>
       <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\include\mbport.h</file>
-      <file>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Source\Templates\iar\startup_stm32f030x6.s</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\RS485_STTM.pbd</file>
-      <file>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f030x6.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_i2c.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_pwr_ex.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_pwr_ex.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_dma.o</file>
-      <file>$PROJ_DIR$\..\..\..\..\_modules\debug.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mb.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\porttimer.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_flash_ex.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_gpio.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\modSysClock.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_tim.pbi</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_pwr.h</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_i2c.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_dma.pbi</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_i2c_ex.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_pwr.pbi</file>
-      <file>$PROJ_DIR$\..\..\..\..\_modules\drivers\drvStorage.h</file>
-      <file>$PROJ_DIR$\..\..\..\..\_modules\drivers\drvStorage_STM32F030xx.c</file>
-      <file>$PROJ_DIR$\..\..\..\..\_modules\mod1Wire\mod1Wire.c</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\main.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\portevent.pbi</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_rcc_ex.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\mb.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\portserial.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_tim_ex.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\startup_stm32f030x6.o</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\portevent.o</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio_ex.h</file>
-      <file>$PROJ_DIR$\..\Inc\main.h</file>
-      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_gpio.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\modSysClock.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\include\mbproto.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\rtu\mbrtu.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\port.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbutils.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\include\mbutils.h</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\portevent.c</file>
+      <file>$PROJ_DIR$\..\Src\main.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\portserial.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\porttimer.c</file>
+      <file>$PROJ_DIR$\..\Src\stm32f0xx_hal_msp.c</file>
+      <file>$PROJ_DIR$\..\Src\stm32f0xx_it.c</file>
+      <file>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_cortex.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_dma.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash_ex.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_gpio.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c_ex.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr_ex.c</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\porttimer.pbi</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc_ex.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim.c</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim_ex.c</file>
       <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncdiag.pbi</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_i2c_ex.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
-      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal.o</file>
-      <file>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h</file>
-      <file>$PROJ_DIR$\..\..\FMT\Inc\board.h</file>
-      <file>$PROJ_DIR$\..\..\FMT\Src\main.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\_modules\pt-1.4\lc-switch.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\porttimer.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_pwr.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\debug.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbrtu.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mod1Wire.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\modSysClock.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncother.__cstat.et</file>
+      <file>$PROJ_DIR$\..\Inc\stm32f0xx_it.h</file>
+      <file>$TOOLKIT_DIR$\lib\dl6M_tlf.a</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_gpio.pbi</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_cortex.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_flash_ex.pbi</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_dma.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncother.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_flash.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbrtu.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_rcc_ex.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncother.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mod1Wire.pbi</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_tim.o</file>
+      <file>$PROJ_DIR$\stm32f030x6_flash.icf</file>
+      <file>$PROJ_DIR$\RS485_STTM\List\RS485_STTM.map</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_tim.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\porttimer.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\assert.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_it.o</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_tim_ex.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbcrc.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_it.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbutils.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfunccoils.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_msp.pbi</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_dma.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mb.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_pwr_ex.__cstat.et</file>
+      <file>$PROJ_DIR$\..\Inc\stm32f0xx_hal_conf.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\portserial.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\ystdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\mbfuncinput.o</file>
+      <file>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Inc\stm32f0xx_hal_flash.h</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\stm32f0xx_hal_rcc_ex.__cstat.et</file>
+      <file>$PROJ_DIR$\RS485_STTM\Obj\portserial.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
     </outputs>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\_modules\debug.c</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 67</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
-          <file> 68</file>
+          <file> 93</file>
         </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>ILINK</name>
-          <file> 47</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbutils.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 27</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 97</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\portevent.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 157</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 150</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\portserial.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 153</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 78</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\porttimer.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 135</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 22</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Src\main.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 149</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 83</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 143 13 74 19 1 133 72 125 160 141 128 48 70 28 14 114 16 108 69 140 4 144 35 119 117 146 112 106 159 151 167 12 3 21 52 154 0 96 64 6 110 111 165 95 158 80 75 10 94</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Src\stm32f0xx_it.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 2</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 26</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Src\stm32f0xx_hal_msp.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 9</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 71</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 84</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 15</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfunccoils.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 79</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 44</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncdiag.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 43</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 163</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncdisc.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 82</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 50</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncholding.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 25</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 51</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncinput.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 56</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 81</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncother.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 55</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 76</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\rtu\mbrtu.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 54</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 91</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 18</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 145</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr_ex.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 131</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 130</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 30</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 8</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc_ex.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 24</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 46</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 53</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 139</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim_ex.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 57</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 155</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 166</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 162</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_cortex.c</name>
-      <outputs>
         <tool>
           <name>ICCARM</name>
           <file> 92</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 109</file>
+          <name>__cstat</name>
+          <file> 169</file>
         </tool>
       </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_dma.c</name>
-      <outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 217 211 194 88 59 87 107 44 209 28 187 47 76 26 9 2 22 29 179 177 214 38 37 45 21 192 102 81 205 166 182 104 18 212 50 77 112 199 73</file>
+        </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 132</file>
+          <file> 112 2 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
         </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 142</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 29</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 31</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_gpio.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 137</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 77</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash_ex.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 136</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 20</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 129</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 23</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c_ex.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 164</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 45</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\_modules\modSysClock\modSysClock.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 138</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 161</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\_modules\sysReport.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 93</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 11</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\mb.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 152</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 134</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\rtu\mbcrc.c</name>
-      <outputs>
-        <tool>
-          <name>ICCARM</name>
-          <file> 49</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 7</file>
-        </tool>
-      </outputs>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Source\Templates\iar\startup_stm32f030x6.s</name>
       <outputs>
         <tool>
           <name>AARM</name>
-          <file> 156</file>
+          <file> 8</file>
         </tool>
       </outputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\_modules\drivers\drvStorage_STM32F030xx.c</name>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\[ROOT_NODE]</name>
       <outputs>
         <tool>
-          <name>ICCARM</name>
-          <file> 66</file>
+          <name>ILINK</name>
+          <file> 75 190</file>
         </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\[ROOT_NODE]</name>
+      <outputs>
         <tool>
-          <name>BICOMP</name>
-          <file> 73</file>
+          <name>ILINK</name>
+          <file> 75</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\RS485_STTM\Exe\RS485_STTM.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 190</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 189 92 91 23 46 198 51 111 56 16 213 180 170 25 72 3 12 103 167 8 20 71 36 66 5 11 74 63 14 168 34 67 17 188 97 196 69 100 60 65 61 175</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\..\..\..\..\[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 75 190</file>
         </tool>
       </outputs>
     </file>
@@ -660,18 +307,937 @@
       <name>$PROJ_DIR$\..\..\..\..\_modules\mod1Wire\mod1Wire.c</name>
       <outputs>
         <tool>
+          <name>BICOMP</name>
+          <file> 186</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 72</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 171</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 212 50 107 177 21 102 26 88 29 38 165 119 2 59 22 179 214 37 45 192 194 81 18 217 77 44 118 112 209 28 187 47 76 87 211 9 116 205 166 182 104 199 73 80</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 116 2 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44 119 80 165 118 112</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\_modules\drivers\drvStorage_STM32F030xx.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 91</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 110</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 194 107 59 87 205 104 26 121 209 28 187 47 76 217 73 2 22 29 179 177 214 38 37 45 21 192 102 81 166 182 212 199 113 88 18 211 9 50 77 44</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 113 2 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44 121</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\_modules\modSysClock\modSysClock.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 3</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 172</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87 2 59 217 211 194 88 107 44 209 28 187 47 76 26 9 22 29 179 177 214 38 37 45 21 192 102 81 205 166 182 104 18 212 50 77 118 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 118 2 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\_modules\sysReport.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 69</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 33</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22 107 45 44 214 192 194 217 2 59 179 37 81 205 211 29 177 38 21 102 26 166 9 209 28 187 47 76 87 88 18 212 50 77 121 182 104 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 121 2 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\mb.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 206</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 7</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59 136 107 124 199 88 26 217 212 139 137 138 40 209 28 187 47 76 18 207 123 128 129 166 205 182 104 64 195 2 194 22 29 179 177 214 38 37 45 21 192 102 81 211 73 58 87 9 50 77 44</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 58 26 217 205 182 104 166 88 199 207 64 139 195 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 211 45 29 9 179 50 177 214 77 38 73 37 44 123 136 137 124 128 129 138</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\rtu\mbcrc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 198</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 109</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 214 194 192 217 88 59 22 107 45 40 179 37 18 26 77 44 29 177 38 21 102 212 50 195 2 205 166 182 104 209 28 187 47 76 81 211 9 139 87 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 139 195 26 217 205 182 104 166 88 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\rtu\mbrtu.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 183</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 170</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38 64 217 195 107 9 166 182 29 199 138 26 177 21 102 139 126 205 104 2 194 59 22 179 214 37 45 192 212 44 207 123 128 136 88 40 209 28 187 47 76 87 50 77 58 81 18 211 73 137</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 58 26 217 205 182 104 166 88 199 207 64 139 195 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 211 45 29 9 179 50 177 214 77 38 73 37 44 123 136 137 138 128 126</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfunccoils.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 202</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 51</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 55</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 107 40 47 199 209 9 128 217 28 187 76 139 124 88 59 212 44 207 123 137 166 205 182 104 64 195 2 194 22 29 179 177 214 38 37 45 21 192 102 87 50 77 136 58 81 18 211 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 58 26 217 205 182 104 166 88 199 207 64 139 195 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 211 45 29 9 179 50 177 214 77 38 73 37 44 123 136 137 128 124</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncdiag.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 164</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 111</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncdisc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 56</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 53</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 199 107 214 192 194 217 26 22 45 9 128 205 104 2 59 179 37 139 124 166 182 64 195 29 177 38 21 102 212 44 207 123 137 88 40 209 28 187 47 76 87 50 77 136 58 81 18 211 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 58 26 217 205 182 104 166 88 199 207 64 139 195 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 211 45 29 9 179 50 177 214 77 38 73 37 44 123 136 137 128 124</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncholding.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 62</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107 187 217 76 28 199 26 9 128 40 209 47 139 124 88 59 212 44 207 123 137 166 205 182 104 64 195 2 194 22 29 179 177 214 38 37 45 21 192 102 87 50 77 136 58 81 18 211 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 58 26 217 205 182 104 166 88 199 207 64 139 195 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 211 45 29 9 179 50 177 214 77 38 73 37 44 123 136 137 128 124</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncinput.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 213</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 82</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 217 107 28 187 76 199 26 9 128 40 209 47 139 124 88 59 212 44 207 123 137 166 205 182 104 64 195 2 194 22 29 179 177 214 38 37 45 21 192 102 87 50 77 136 58 81 18 211 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 58 26 217 205 182 104 166 88 199 207 64 139 195 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 211 45 29 9 179 50 177 214 77 38 73 37 44 123 136 137 128 124</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbfuncother.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 185</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 180</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 173</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107 166 182 29 199 217 64 195 38 9 128 26 177 21 102 139 124 205 104 2 194 59 22 179 214 37 45 192 212 44 207 123 137 88 40 209 28 187 47 76 87 50 77 136 58 81 18 211 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 58 26 217 205 182 104 166 88 199 207 64 139 195 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 211 45 29 9 179 50 177 214 77 38 73 37 44 123 136 137 128 124</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\modbus\functions\mbutils.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 105</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 201</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107 166 26 177 21 102 137 182 217 64 195 29 38 81 211 139 205 104 199 2 194 59 22 179 214 37 45 192 73 207 123 88 40 209 28 187 47 76 18 212 58 87 9 50 77 44 136</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 58 26 217 205 182 104 166 88 199 207 64 139 195 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 211 45 29 9 179 50 177 214 77 38 73 37 44 123 136 137</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\portevent.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 12</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 54</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102 21 107 177 194 137 217 26 29 38 139 40 88 59 22 179 214 37 45 192 87 73 136 195 2 205 166 182 104 209 28 187 47 76 212 199 123 81 18 211 9 50 77 44</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 123 139 195 26 217 205 182 104 166 88 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44 136 137</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 94</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 177 187 76 107 217 112 81 136 29 38 47 205 104 26 2 118 22 179 214 37 59 73 139 123 121 113 116 209 28 45 21 192 102 194 166 182 212 199 137 40 87 88 18 211 9 50 77 44 195</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 28 59 209 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44 2 123 139 195 40 136 137 121 118 113 112 116</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\portserial.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 210</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 103</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 216</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107 2 182 59 194 26 166 136 195 205 104 209 28 187 47 76 87 73 139 123 40 217 88 22 29 179 177 214 38 37 45 21 192 102 212 199 137 81 18 211 9 50 77 44</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 139 195 26 217 205 182 104 166 88 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44 123 136 137</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\freemodbus-v1.5.0\port\STM32F030\porttimer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 159</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 167</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 193</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107 214 192 194 217 22 45 40 88 59 179 37 26 123 29 177 38 21 102 87 73 139 136 195 2 205 166 182 104 209 28 187 47 76 212 199 137 81 18 211 9 50 77 44</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 139 195 26 217 205 182 104 166 88 40 194 2 59 209 28 22 107 21 47 102 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44 123 136 137</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\stm32f0xx_hal_msp.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 203</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 14</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47 211 209 28 187 76 217 26 107 44 59 194 87 88 9 22 29 179 177 214 38 37 45 21 192 102 81 205 166 182 104 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\stm32f0xx_it.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 196</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 200</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 87 59 212 50 107 194 88 2 174 209 28 187 47 76 217 26 18 77 21 118 22 29 179 177 214 38 37 45 192 102 81 205 166 182 104 211 9 44 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44 174 118 2</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Source\Templates\system_stm32f0xx.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 99</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 100</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 217 211 76 26 47 107 44 59 194 87 88 18 212 9 102 81 205 166 182 104 209 28 187 50 77 21 22 29 179 177 214 38 37 45 192 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 59 209 28 22 107 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 78</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 86</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 205 37 104 211 179 81 22 214 107 45 192 194 217 44 29 177 38 21 102 26 166 182 9 209 28 187 47 59 76 87 88 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_cortex.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 85</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 71</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 108</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 166 211 177 21 102 29 38 182 217 107 44 22 179 214 37 45 192 194 81 205 104 9 209 28 187 47 59 76 87 88 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 79</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 168</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 89</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 217 209 211 28 187 76 26 47 107 44 59 194 87 88 9 22 29 179 177 214 38 37 45 21 192 102 81 205 166 182 104 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_dma.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 204</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 192 194 214 217 211 22 107 45 179 37 81 205 104 44 29 177 38 21 102 26 166 182 9 209 28 187 47 59 76 87 88 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 66</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 181</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 81 179 217 211 37 205 104 22 214 107 45 192 194 44 29 177 38 21 102 26 166 182 9 209 28 187 47 59 76 87 88 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_flash_ex.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 178</file>
+        </tool>
+        <tool>
           <name>ICCARM</name>
           <file> 5</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 107</file>
+          <name>__cstat</name>
+          <file> 48</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 217 187 76 28 26 209 47 18 107 77 44 59 194 87 88 212 50 22 29 179 177 214 38 37 45 21 192 102 81 205 166 211 9 182 104 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
     </file>
-    <forcedrebuild>
-      <name>[REBUILD_ALL]</name>
-    </forcedrebuild>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_gpio.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 176</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 83</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 217 211 194 88 59 87 107 44 209 28 187 47 76 26 9 22 29 179 177 214 38 37 45 21 192 102 81 205 166 182 104 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 98</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 74</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 90</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 177 21 102 217 44 26 107 29 38 211 22 179 214 37 45 192 194 9 209 28 187 47 59 76 87 88 18 212 50 77 81 205 166 182 104 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c_ex.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 101</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 63</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 39</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 179 81 211 37 205 104 22 214 107 45 192 194 217 44 29 177 38 21 102 26 166 182 9 209 28 187 47 59 76 87 88 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr_ex.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 208</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 28 187 76 217 211 209 47 107 44 59 194 87 88 9 22 29 179 177 214 38 37 45 21 192 102 81 205 166 182 104 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 67</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 107 45 22 217 214 192 194 179 37 81 18 26 77 44 29 177 38 21 102 88 212 50 209 28 187 47 59 76 87 211 9 205 166 182 104 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc_ex.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 184</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 215</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 102 21 26 177 217 211 166 29 38 182 107 44 22 179 214 37 45 192 194 81 205 104 9 209 28 187 47 59 76 87 88 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 191</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 188</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37 104 205 211 179 81 22 214 107 45 192 194 217 44 29 177 38 21 102 26 166 182 9 209 28 187 47 59 76 87 88 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_tim_ex.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 197</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 97</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 106</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37 104 205 211 179 81 22 214 107 45 192 194 217 44 29 177 38 21 102 26 166 182 9 209 28 187 47 59 76 87 88 18 212 50 77 199 73</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 209 28 22 107 21 47 102 194 26 217 205 182 104 166 88 81 212 18 87 76 187 192 199 211 45 29 9 179 50 177 214 77 38 73 37 44</file>
+        </tool>
+      </inputs>
+    </file>
   </configuration>
 </project>
 

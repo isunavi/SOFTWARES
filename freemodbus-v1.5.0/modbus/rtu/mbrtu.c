@@ -1,4 +1,4 @@
-/* 
+/*
  * FreeModbus Libary: A portable Modbus implementation for Modbus ASCII/RTU.
  * Copyright (c) 2006 Christian Walter <wolti@sil.at>
  * All rights reserved.
@@ -200,18 +200,18 @@ eMBRTUSend( UCHAR ucSlaveAddress, const UCHAR * pucFrame, USHORT usLength )
         /* First byte before the Modbus-PDU is the slave address. */
         pucSndBufferCur = ( UCHAR * ) pucFrame - 1;
         usSndBufferCount = 1;
-        
+
         /* Now copy the Modbus-PDU into the Modbus-Serial-Line-PDU. */
-        pucSndBufferCur [MB_SER_PDU_ADDR_OFF] = ucSlaveAddress;
+        pucSndBufferCur[MB_SER_PDU_ADDR_OFF] = ucSlaveAddress;
         usSndBufferCount += usLength;
-        
+
         /* Calculate CRC16 checksum for Modbus-Serial-Line-PDU. */
         usCRC16 = usMBCRC16( ( UCHAR * ) pucSndBufferCur, usSndBufferCount );
         ucRTUBuf[usSndBufferCount++] = ( UCHAR )( usCRC16 & 0xFF );
         ucRTUBuf[usSndBufferCount++] = ( UCHAR )( usCRC16 >> 8 );
-        
-        usSndBufferCount++; //+ZAY_079 вот тут этот костыль обитает
-        
+
+        //usSndBufferCount++; //+ZAY_079 вот тут этот костыль обитает
+
         /* Activate the transmitter. */
         eSndState = STATE_TX_XMIT;
         vMBPortSerialEnable( FALSE, TRUE );
@@ -257,7 +257,7 @@ xMBRTUReceiveFSM( void )
          */
     case STATE_RX_IDLE:
         usRcvBufferPos = 0;
-        ucRTUBuf [usRcvBufferPos++] = ucByte;
+        ucRTUBuf[usRcvBufferPos++] = ucByte;
         eRcvState = STATE_RX_RCV;
 
         /* Enable t3.5 timers. */
@@ -272,7 +272,7 @@ xMBRTUReceiveFSM( void )
     case STATE_RX_RCV:
         if( usRcvBufferPos < MB_SER_PDU_SIZE_MAX )
         {
-            ucRTUBuf [usRcvBufferPos++] = ucByte;
+            ucRTUBuf[usRcvBufferPos++] = ucByte;
         }
         else
         {
