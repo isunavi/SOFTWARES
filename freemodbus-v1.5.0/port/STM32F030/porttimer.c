@@ -62,7 +62,7 @@ BOOL xMBPortTimersInit (USHORT usTim1Timerout50us)
     return HAL_OK == HAL_TIM_Base_Init (&htim) ? TRUE : FALSE;
     */
 
-	timeout = usTim1Timerout50us + 20;//*modbus_delay; //2000; //ZAY - +20ms? тому что не успевал центральный контроллер перевести линию с передачи на прием и наш пакет ответа терялся?
+	timeout = usTim1Timerout50us;// + 20;//*modbus_delay; //2000; //ZAY - +20ms? тому что не успевал центральный контроллер перевести линию с передачи на прием и наш пакет ответа терялся?
 
 	return TRUE;
 }

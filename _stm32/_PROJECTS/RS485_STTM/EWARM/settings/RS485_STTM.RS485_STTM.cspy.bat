@@ -25,7 +25,7 @@ if not "%1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "\\VBOXSVR\my\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\settings\RS485_STTM.RS485_STTM.general.xcl" --backend -f "\\VBOXSVR\my\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\settings\RS485_STTM.RS485_STTM.driver.xcl" 
+"D:\program\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\MY\GIT\SOFTWARES\_stm32\_PROJECTS\RS485_STTM\EWARM\settings\RS485_STTM.RS485_STTM.general.xcl" --backend -f "D:\MY\GIT\SOFTWARES\_stm32\_PROJECTS\RS485_STTM\EWARM\settings\RS485_STTM.RS485_STTM.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "\\VBOXSVR\my\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\settings\RS485_STTM.RS485_STTM.general.xcl" "--debug_file=%1" --backend -f "\\VBOXSVR\my\GIT\FIRMWARE\_stm32\_PROJECTS\RS485_STTM\EWARM\settings\RS485_STTM.RS485_STTM.driver.xcl" 
+"D:\program\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\MY\GIT\SOFTWARES\_stm32\_PROJECTS\RS485_STTM\EWARM\settings\RS485_STTM.RS485_STTM.general.xcl" "--debug_file=%1" --backend -f "D:\MY\GIT\SOFTWARES\_stm32\_PROJECTS\RS485_STTM\EWARM\settings\RS485_STTM.RS485_STTM.driver.xcl" 
 
 @echo off 
 :end

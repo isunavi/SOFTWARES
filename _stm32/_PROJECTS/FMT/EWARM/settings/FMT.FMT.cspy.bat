@@ -25,7 +25,7 @@ if not "%1" == "" goto debugFile
 
 @echo on 
 
-"D:\program\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\FMT\EWARM\settings\FMT.FMT.general.xcl" --backend -f "D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\FMT\EWARM\settings\FMT.FMT.driver.xcl" 
+"D:\program\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\MY\GIT\SOFTWARES\_stm32\_PROJECTS\FMT\EWARM\settings\FMT.FMT.general.xcl" --backend -f "D:\MY\GIT\SOFTWARES\_stm32\_PROJECTS\FMT\EWARM\settings\FMT.FMT.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\program\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\FMT\EWARM\settings\FMT.FMT.general.xcl" "--debug_file=%1" --backend -f "D:\MY\GIT\FIRMWARE\_stm32\_PROJECTS\FMT\EWARM\settings\FMT.FMT.driver.xcl" 
+"D:\program\IAR Systems\Embedded Workbench 7.2\common\bin\cspybat" -f "D:\MY\GIT\SOFTWARES\_stm32\_PROJECTS\FMT\EWARM\settings\FMT.FMT.general.xcl" "--debug_file=%1" --backend -f "D:\MY\GIT\SOFTWARES\_stm32\_PROJECTS\FMT\EWARM\settings\FMT.FMT.driver.xcl" 
 
 @echo off 
 :end

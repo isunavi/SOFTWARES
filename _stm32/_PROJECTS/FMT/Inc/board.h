@@ -11,13 +11,6 @@
 #define STM32                   1//for debug.h
 
 
-//#define HSE_VALUE                   ((uint32_t)6000000UL)
-//#define STM32F10X_MD               
-//#define CPU_VALUE                 12000000UL
-//#define STM32                       1 //процессор\ядро
-//#define USE_STDPERIPH_DRIVER
-
-
 /**
  *  Раздел для "include"
  */
@@ -52,7 +45,7 @@ typedef int8_t				bool_t;
 #endif
 
 
-
+#define _DEBUG                      1 //commit, if not need debug
 
 // PB7  - LED_GREEN
 // GPIO ------------------------------------------
@@ -66,7 +59,6 @@ typedef int8_t				bool_t;
 #define GPIO_SPIFLASH_CS_H      GPIOC->BSRR = GPIO_SPI_25DF_CS_Pin;
 
 
-
 //------------------------------- UART -----------------------------------------
 #define HAL_USART1                  1
 #define USART1_TX_HOOK              do {Uart1TX_Ready = SET;} while (0)
@@ -76,10 +68,7 @@ typedef int8_t				bool_t;
 #define USART1_BUF_RX_SIZE          (1024)
 #define USART1_LED_INV              //LED_BLUE_INV 
 
-
-
-#define HAL_SPI1                        1
-
+#define HAL_SPI1                    1
 
 
 // for xprintf.h
@@ -110,5 +99,4 @@ typedef int8_t				bool_t;
 #define __CLRWDT()              do { IWDG->KR = 0x0000AAAA; } while (0) // перезагрузка вачдоге
 
 
-    
 #endif	/* BOARD_H */

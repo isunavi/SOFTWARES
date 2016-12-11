@@ -1067,6 +1067,12 @@
           <name>$PROJ_DIR$\..\Inc\_crc.h</name>
         </file>
         <file>
+          <name>$PROJ_DIR$\..\Src\_FIFO.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\Inc\_FIFO.h</name>
+        </file>
+        <file>
           <name>$PROJ_DIR$\..\Inc\board.h</name>
         </file>
         <file>

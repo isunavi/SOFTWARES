@@ -56,9 +56,9 @@ FIL file_test;
 FRESULT result;
 FATFS FATFS_obj;
 uint32_t str_size;
-static const char file_path [] = "ADC_RAW_DATA.bin";
-char _str [128];
-uint8_t ch [256] = {"HELL\r\n"};
+static const char file_name [] = "ADC_RAW_DATA.bin";
+char _str [256];
+char ch [256];
 uint32_t tmpu32 = 0;
 uint16_t tmpu16;
 
@@ -70,17 +70,23 @@ uint32_t ready_to_close = 0;
 //#define show_message(a,b)
 
 #include "modParser.h"
+#include "_FIFO.h"
 
-uint32_t ADC_flag_ready = 0;
 
-uint32_t cnt_wr = 0;
-uint32_t cnt_rd = 0;
-uint32_t cnt_error_wr = 0;
-uint32_t cnt_error_rd = 0;
 
-volatile static const uint16_t compile_date []    = { 2016, 12, 8 };
-volatile static const uint16_t compile_version [] = { 7 };
-volatile static const uint16_t firmware_date []   = { 2016, 12, 8 };
+
+
+volatile static const uint16_t compile_date []    = { 2016, 12, 11 };
+volatile static const uint16_t compile_version [] = { 8 };
+volatile static const uint16_t firmware_date []   = { 2016, 12, 11 };
+
+uint8_t tmpchar;
+uint8_t respBuf [PARSER_MAX_DATA_SIZE];
+uint8_t IOBuf [PARSER_MAX_DATA_SIZE];
+uint8_t size8;
+
+
+
 
 /* USER CODE END Includes */
 
@@ -138,8 +144,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-
-uint32_t error_cnt = 0;
+uint32_t USB_error_cnt;
 uint8_t show_message (char *buf)
 {
     uint32_t test_cnt = 0;
@@ -155,10 +160,10 @@ uint8_t show_message (char *buf)
     }
     else
     {
-repeat:
+repeat: //TODO
         if (USBD_OK != CDC_Transmit_FS((uint8_t *)&buf[0], size))
         {
-            error_cnt++;
+            USB_error_cnt++;
             if (++test_cnt >= 10)
             {
                 return 1;
@@ -171,7 +176,6 @@ repeat:
         }
         else
         {
-
             return 0;
         }
     }
@@ -180,141 +184,35 @@ repeat:
 
 uint8_t show_message_c (const char *str)
 {
+#if _DEBUG
     xsprintf (_str, "%s", str);
     show_message (_str);
+#endif
 }
 
 
-
-
-typedef struct FIFO_t_ //struct
-{
-    int32_t in; // Next In Index
-    int32_t out; // Next Out Index
-    uint8_t *buf; // Buffer
-    int32_t size;
-} FIFO_t;
-
-#define FIFO_POS     (s->in - s->out)
-
-void FIFO_flush ( FIFO_t *s)
-{
-    s->in = s->out;
-}
-
-
-bool_t FIFO_init ( FIFO_t *s, uint8_t *buf, uint32_t FIFO_size)
-{
-    if ((NULL == buf) || 
-        (FIFO_size < 2) || // FIFO size is too small.  It must be larger than 1
-        ((FIFO_size & (FIFO_size - 1)) != 0)) //must be a power of 2
-    {
-        return FALSE;
-    }
-    else
-    {
-        __disable_irq ();
-        s->buf = buf;
-        s->size = FIFO_size;
-        __enable_irq ();
-        FIFO_flush (s);
-        return TRUE;
-    }
-}
-
-
-uint32_t FIFO_available ( FIFO_t *s) //TODO data size
-{
-    int32_t i;
-
-    __disable_irq ();
-    i = FIFO_POS;
-    __enable_irq ();
-    if (i < 0)
-      i = -i;
-    return (uint32_t)i;
-}
-
-
-bool_t FIFO_get ( FIFO_t *s, uint8_t *c) //TODO data size
-{
-    if (FIFO_available (s) > 0)
-    {
-        __disable_irq ();
-        *c = (s->buf [(s->out) & (s->size - 1)]);
-        s->out++;
-        __enable_irq ();
-        return  TRUE;
-    }
-    return FALSE;
-}
-
-
-bool_t FIFO_put ( FIFO_t *s, uint8_t c) 
-{
-    __disable_irq ();
-    if (FIFO_POS < s->size) // If the buffer is full, return an error value
-    {
-        s->buf [s->in & (s->size - 1)] = c; 
-        s->in++;
-        __enable_irq ();
-        return TRUE;
-    }
-    __enable_irq ();
-    return FALSE;
-}
-
-
-bool_t FIFO_gets ( FIFO_t *s, uint8_t *c, uint32_t data_size) //TODO data size
-{
-    uint32_t i;
-
-    if (NULL == c)
-        return FALSE;
-    if (data_size > s->size)
-        return FALSE;
-    if (FIFO_available (s) >= data_size)
-    {
-        __disable_irq ();
-        for (i = 0; i < data_size; i++)
-        {
-            c [i] = (s->buf [(s->out) & (s->size - 1)]);
-            s->out++;
-        }
-        __enable_irq ();
-        return TRUE;
-    }
-    return FALSE;
-}
-
-
-bool_t FIFO_puts ( FIFO_t *s, uint8_t *c, uint32_t data_size) 
-{
-    uint32_t i;
+// CONF --------------------------------
+typedef struct FMT_t_ {
+    uint8_t  ADC_mode; //TODO
+    uint32_t ADC_period;
+    uint32_t ADC_collect_size;
+    bool_t ADC_flag_ready;
     
-    if (NULL == c)
-        return FALSE;
-    if (data_size > s->size)
-        return FALSE;
-    if (s->size - FIFO_available (s) >= data_size) // If the buffer is full, return an error value
-    {
-        __disable_irq ();
-        for (i = 0; i < data_size; i++)
-        {
-            s->buf [s->in & (s->size - 1)] = c [i]; 
-            s->in++;
-        }
-        __enable_irq ();
-        return TRUE;
-    }
-    return FALSE;
-}
+    uint32_t cnt_wr;
+    uint32_t cnt_rd;
 
+    uint32_t cnt_error_wr ;
 
+    uint32_t cnt_error_ALL ;
+    bool_t file_opened;
+
+} FMT_t;
+
+FMT_t FMT;
 
 
 static FIFO_t FIFO_UART_RX; //TODO malloc
-#define FIFO_UART_RX_SIZE          128 /*** Must be a power of 2 (2,4,8,16,32,64,128,256,512,...) ***/
+#define FIFO_UART_RX_SIZE          256 /*** Must be a power of 2 (2,4,8,16,32,64,128,256,512,...) ***/
 static uint8_t FIFO_UART_RX_buf [FIFO_UART_RX_SIZE];
 
 
@@ -322,13 +220,8 @@ static FIFO_t FIFO_ADC; //TODO malloc
 #define FIFO_ADC_SIZE              4096 /*** Must be a power of 2 (2,4,8,16,32,64,128,256,512,...) ***/
 static uint8_t FIFO_ADC_buf [FIFO_ADC_SIZE];
 
-
-
-//------------------------------------------------------------------------------
-
-
 #define ADC_BUF_SIZE                4
-#define ADC_DATA_COLLECT            1000000 // all data = ADC_BUF_SIZE * ADC_DATA_COLLECT
+//#define ADC_DATA_COLLECT            1000000 // all data = ADC_BUF_SIZE * ADC_DATA_COLLECT
 
 
 #pragma pack(push, 1) //for pucked data structures
@@ -346,12 +239,9 @@ struct parser_data_t {
 #pragma pack(pop) 
 
 #define ADC_BUF_ALL_SIZE (ADC_BUF_SIZE * 2 )
-#define PARSER_OUT_SIZE     (10+ ADC_BUF_ALL_SIZE) //size our packet
+#define PARSER_OUT_SIZE     (10 + ADC_BUF_ALL_SIZE) //size our packet
 
 
-
-//__IO uint16_t ADC1_buf [ADC_BUF_SIZE];
-//__IO uint16_t ADC2_buf [ADC_BUF_SIZE];
 __IO uint16_t ADC3_buf [ADC_BUF_SIZE];
 uint16_t ADC3_pointer = 0;
 
@@ -397,17 +287,14 @@ void HAL_ADC_ConvCpltCallback (ADC_HandleTypeDef* hadc) //TODO check that adc1 f
         {
         }
         
-        if (ADC_flag_ready > 0)
+        if (FMT.ADC_flag_ready == TRUE)
         {
-            ADC_flag_ready++;
-
-            cnt_wr++;
+            FMT.cnt_wr++;
             if (TRUE != FIFO_puts (&FIFO_ADC, (uint8_t *)&parser_data.adc1_value_out [0], ADC_BUF_ALL_SIZE))
             {
-                cnt_error_wr++;
+                FMT.cnt_error_wr++;
             }
-
-            if (ADC_flag_ready >= (ADC_DATA_COLLECT +1)) //ÒÎÌÓ ÙÎ
+            if (FMT.cnt_wr >= (FMT.ADC_collect_size + 1)) //ÒÎÌÓ ÙÎ
             {
                 HAL_TIM_Base_Stop (&htim2); 
             }
@@ -421,17 +308,19 @@ typedef enum {
     FMT_CMD_GET_DEV_ID              = 'I',
     FMT_CMD_GET_FIRMWARE_VER        = 'V',
    
-    FMT_CMD_RESET                   = 'R', //not implemented!
+    FMT_CMD_ADC_GET_VBAT            = 'B', //2,3 - number channel
+    
+    FMT_CMD_DAC_SET_CHANNEL_VALUE   = 'D', //1,2 - number channel
+    
+    FMT_CMD_FAT_RESET               = 'R',
         
     FMT_CMD_ADC_START               = '1',
-    FMT_CMD_ADC_SET_CHANNEL         = 'C',
-    FMT_CMD_ADC_SET_FRQ             = 'F',
+    FMT_CMD_ADC_SET_PERIOD          = 'P',
     FMT_CMD_ADC_SET_BUF_SIZE        = 'S',
     FMT_CMD_ADC_STOP                = '2',
     
-    FMT_CMD_ADC_GET_VBAT            = 'B',
+    FMT_CMD_FAT_GET                 = 'G',
     
-    FMT_CMD_DAC_SET_CHANNEL_VALUE   = 'D',
     
 } FMT_CMD;
 
@@ -474,20 +363,15 @@ void HAL_UART_RxCpltCallback (UART_HandleTypeDef *UartHandle)
   *         add your own implementation.
   * @retval None
   */
-void HAL_UART_ErrorCallback(UART_HandleTypeDef *UartHandle)
+void HAL_UART_ErrorCallback (UART_HandleTypeDef *UartHandle)
 {
   /* Turn LED_ORANGE on: Transfer error in reception/transmission process */
   //BSP_LED_On(LED_ORANGE); 
   //Error_Handler();
 }
 
-#include "modParser.h"
-uint8_t tmpchar;
-uint8_t respBuf [PARSER_MAX_DATA_SIZE];
-uint8_t IOBuf [PARSER_MAX_DATA_SIZE];
-uint8_t size8;
 
-static uint32_t *UID = (uint32_t *)0x1FFF7A10; // 0x1FFFF7E8
+static uint32_t *UID = (uint32_t *)0x1FFF7A10; // 0x1FFFF7E8 for STM32F100
 
 
 // for drvSPIFLASH -----------------------------------------
@@ -502,10 +386,8 @@ uint8_t halSPIFLASH_xspi (uint8_t byte)
     while (0 == (SPI1->SR & SPI_SR_TXE)) {};
     SPI1->DR = byte;
     while (!(SPI1->SR & SPI_SR_RXNE)) {};
-    //HAL_Delay (1);
     return SPI1->DR;
 }
-//-----------------------------------------------------------
 
 
 void drvBUZZER_on (void)
@@ -539,7 +421,7 @@ void FAT_reinit (void)
 {
     // CD card off-on!
     HAL_GPIO_WritePin (GPIOC, GPIO_SD_ONOFF_Pin, GPIO_PIN_SET);
-    HAL_Delay (100);
+    HAL_Delay (200); // ~300ms
     HAL_GPIO_WritePin (GPIOC, GPIO_SD_ONOFF_Pin, GPIO_PIN_RESET);
     
     result = f_mount (&FATFS_obj, "0", 1);
@@ -565,6 +447,7 @@ void FAT_reinit (void)
         }
         else
         {
+            show_message_c ("make FAT error");
             drvBUZZER_peep (2);
         }
     }
@@ -574,7 +457,7 @@ void FAT_reinit (void)
         result = f_mkfs ("0", 0, 512);
         if (FR_OK != result)
         {
-            show_message_c ("FAT reinit");
+            
         }
     }
     */
@@ -584,6 +467,45 @@ void FAT_reinit (void)
         show_message_c ("   SD/FAT init OK");
         //...
     }
+    
+    FMT.file_opened = FALSE;
+}
+
+
+void ADC_init (void)
+{
+
+    //TIM_ClockConfigTypeDef sClockSourceConfig;
+    //TIM_MasterConfigTypeDef sMasterConfig;
+    htim2.Instance = TIM2;
+    htim2.Init.Prescaler = 168 -1;
+    htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+    htim2.Init.Period = FMT.ADC_period;
+    htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+    if (HAL_TIM_Base_Init (&htim2) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    // step (1) - start TIMER
+    HAL_TIM_Base_Start (&htim2);
+    
+    // step (2) - start ADC
+    if (HAL_ADC_Start_DMA (&hadc1,
+        (uint32_t *)&parser_data.adc1_value_out [0],
+        ADC_BUF_SIZE) != HAL_OK)
+    {  
+    }
+        
+    if (HAL_ADC_Start_DMA (&hadc2,
+        (uint32_t *)&parser_data.adc2_value_out [0],
+        ADC_BUF_SIZE) != HAL_OK)
+    {
+    }
+    
+    FMT.cnt_error_ALL = 0;
+    FMT.cnt_error_wr = 0;
+    FMT.cnt_wr = 0;
 }
 
 
@@ -622,8 +544,19 @@ int main(void)
   MX_TIM12_Init();
 
   /* USER CODE BEGIN 2 */
-ALL_RESET:
     _debug_init ();
+    __enable_irq (); // enable interrupts!!!
+    
+    if (HAL_UART_Transmit_IT (&huart1, (uint8_t *)"\r\n\r\nInit start...\r\n", 19)!= HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    if (HAL_UART_Receive_IT (&huart1, (uint8_t *)aRxBuffer, 1) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    
     
     drvSPIFLASH_init (0);
 
@@ -635,44 +568,20 @@ ALL_RESET:
 
     modParser_init (&parser, '#'); //'#' - address
     modParser_reset (&parser);
-   
+    
     //TODO check init
     FIFO_init (&FIFO_UART_RX, &FIFO_UART_RX_buf[0], FIFO_UART_RX_SIZE);
     FIFO_flush (&FIFO_UART_RX);
     
     FIFO_init (&FIFO_ADC, &FIFO_ADC_buf[0], FIFO_ADC_SIZE);
     FIFO_flush (&FIFO_ADC);
-    
-    //TIM_ClockConfigTypeDef sClockSourceConfig;
-    //TIM_MasterConfigTypeDef sMasterConfig;
-    htim2.Instance = TIM2;
-    htim2.Init.Prescaler = 168 -1;
-    htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-    htim2.Init.Period = 10;
-    htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-    if (HAL_TIM_Base_Init (&htim2) != HAL_OK)
-    {
-        Error_Handler();
-    }
 
-    // step (1) - start TIMER
-    HAL_TIM_Base_Start (&htim2);
-    
-    // step (2) - start ADC
-    if (HAL_ADC_Start_DMA (&hadc1,
-        (uint32_t *)&parser_data.adc1_value_out [0],
-        ADC_BUF_SIZE) != HAL_OK)
-    {
-        
-    }
-        
-    if (HAL_ADC_Start_DMA (&hadc2,
-        (uint32_t *)&parser_data.adc2_value_out [0],
-        ADC_BUF_SIZE) != HAL_OK)
-    {
-        
-    }
-    
+    FMT.ADC_mode = 0; //TODO
+    FMT.ADC_collect_size = 10000;
+    FMT.ADC_period   = 1000;
+    FMT.ADC_flag_ready = FALSE;
+    FMT.file_opened = FALSE;
+    ADC_init ();
     
     //DAC on
     HAL_DAC_SetValue (&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 0);
@@ -685,106 +594,46 @@ ALL_RESET:
     {
     }
    
-    __enable_irq (); // enable interrupts!!!
+
     
-    if (HAL_UART_Transmit_IT (&huart1, (uint8_t *)"\r\n\r\nInit start\r\n", 6)!= HAL_OK)
-    {
-        Error_Handler();
-    }
-  
-  
-    if (HAL_UART_Receive_IT (&huart1, (uint8_t *)aRxBuffer, 1) != HAL_OK)
-    {
-        Error_Handler();
-    }
-    
-    HAL_Delay (1000); //for init SD-CARD and not often mount\open\etc
+    HAL_Delay (500); //for init SD-CARD and not often mount\open\etc
 
     // CD card on!
-    HAL_GPIO_WritePin (GPIOC, GPIO_SD_ONOFF_Pin, GPIO_PIN_RESET);
-    
-    result = f_mount (&FATFS_obj, "0", 1);
-    if ((FR_NOT_READY == result) ||
-        (FR_DISK_ERR == result) ||
-        (FR_INVALID_DRIVE == result))
-    {
-        show_message_c ("   SD/FAT init ERROR");
-        drvBUZZER_peep (1);
-    }
-    else
-    {
-        
-    }
-    
-    tmpu32 = 0;
-    if (1 == tmpu32)
-    {
-        result = f_mkfs ("0", 0, 512);
-        if (FR_OK != result)
-        {
-            show_message_c ("SD/FAT mount disk");
-        }
-        else
-        {
-            drvBUZZER_peep (2);
-        }
-    }
-    /*
-    if (FR_NO_FILESYSTEM == result)
-    {
-        result = f_mkfs ("0", 0, 512);
-        if (FR_OK != result)
-        {
-            show_message_c ("FAT reinit");
-        }
-    }
-    */
-    
-    if (FR_OK == result)
-    {
-        show_message_c ("   SD/FAT init OK");
-        //...
-    }
+    FAT_reinit ();
     
     test_core_ticks_new = 0;
     test_core_ticks_old = 0;
     
-    drvBUZZER_peep (1); //end init
-    show_message_c ("Init stop");
+    drvBUZZER_peep (1); //end init OK - 1 peep
+    show_message_c ("Init complite");
     show_message_c ("---------------------------------------------");
     while (1)
     {
         RESET_CORE_COUNT;
  
+        // 0A 23 09 47 00 00 01 00 30 30 30 30 35 35 0D
         if (TRUE == FIFO_gets (&FIFO_UART_RX, &tmpchar, 1)) 
         {
             if (FUNCTION_RETURN_OK == modParser_reciv (&parser, tmpchar, &IOBuf[0], &size8))
             {
-                // parsing command
-                switch (IOBuf [0])
+                uint32_t digit_uint32 = (uint32_t)(IOBuf [1] << 24 | IOBuf [2] << 16 | IOBuf [3] << 8 | IOBuf [4]);
+                switch (IOBuf [0]) // parsing command
                 {
-                case FMT_CMD_TEST:
+                case FMT_CMD_TEST: //T
                     size8 = xsprintf (_str, "[%u.%u]%u ", HAL_GetTick (), test_core_ticks_old);
                     break;
                     
-                case FMT_CMD_GET_DEV_ID:
+                case FMT_CMD_GET_DEV_ID: //I
                     size8 = xsprintf (_str, "ID:0x%08X%08X%08X ", UID [0], UID [1], UID [2]);
                     break;
                     
-                case FMT_CMD_GET_FIRMWARE_VER:
+                case FMT_CMD_GET_FIRMWARE_VER: //V
                     size8 = xsprintf (_str, "date %u.%u.%u v[%u] ", compile_date [0], compile_date [1], compile_date [2], compile_version [0]);
                     break;
                     
-                case FMT_CMD_RESET:
-                    //goto ALL_RESET; //*(uint32_t *)0xFFFFFFFF = 55;; //to hardcore but TRUE!
-                    
-                    FAT_reinit ();
-                    
-                    break;
-
-                case FMT_CMD_ADC_GET_VBAT:
+                case FMT_CMD_ADC_GET_VBAT: //B2(3)
                     ADC_ChannelConfTypeDef sConfig;
-                    if (IOBuf [1] == '2')
+                    if ('2' == IOBuf [1])
                     {
                         sConfig.Channel = ADC_CHANNEL_2;
                         sConfig.Rank = 1;
@@ -803,7 +652,7 @@ ALL_RESET:
                         //ADC3_buf [ADC3_pointer] = tmpu16;
                         size8 = xsprintf (_str, "ADC3 ch%c :%u", IOBuf [1], tmpu16);
                     }
-                    else if (IOBuf [1] == '3')
+                    else if ('3' == IOBuf [1])
                     {
                         sConfig.Channel = ADC_CHANNEL_3;
                         sConfig.Rank = 1;
@@ -829,83 +678,107 @@ ALL_RESET:
                     }
                     break;
                     
-                case FMT_CMD_DAC_SET_CHANNEL_VALUE: //Dac set
-                    if (1 == IOBuf [1])
+                case FMT_CMD_DAC_SET_CHANNEL_VALUE: //D1(2)
+                    if ('1' == IOBuf [1])
+                    {
                         HAL_DAC_SetValue (&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, (uint16_t)(IOBuf [2] << 8) | IOBuf [3]);
-                    if (2 == IOBuf [1])
+                        size8 = xsprintf (_str, "DAC 1 OK ");
+                    }
+                    else if ('2' == IOBuf [1])
+                    {
                         HAL_DAC_SetValue (&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, (uint16_t)(IOBuf [2] << 8) | IOBuf [3]);
-                    size8 = xsprintf (_str, "OK ");
+                        size8 = xsprintf (_str, "DAC 2 OK ");
+                    }
+                    else
+                    {
+                        size8 = xsprintf (_str, "DAC channel error!");
+                        drvBUZZER_peep (1);
+                    }
+                    break;
+
+                case FMT_CMD_ADC_SET_PERIOD: //Pxxxx
+                    FMT.ADC_period = digit_uint32;
+                    size8 = xsprintf (_str, "Period OK - %u ", FMT.ADC_period);
                     break;
                     
-               case FMT_CMD_ADC_START: // start collect adc data
-                   
-                    result = f_open (&file_test, file_path, FA_WRITE);
+                case FMT_CMD_ADC_SET_BUF_SIZE: //Sxxxx
+                    FMT.ADC_collect_size = digit_uint32;
+                    size8 = xsprintf (_str, "ADC size OK - %u ", FMT.ADC_collect_size);
+                    break;
+                    
+                case FMT_CMD_FAT_RESET: //R
+                    FAT_reinit ();
+                    break;
+                    
+                case FMT_CMD_ADC_START: //1 - start collect adc data
+                    result = f_open (&file_test, file_name, FA_WRITE);
                     if (FR_OK != result)
                     {
-                        result = f_open (&file_test, file_path, FA_CREATE_ALWAYS | FA_WRITE);
+                        result = f_open (&file_test, file_name, FA_CREATE_ALWAYS | FA_WRITE);
                         if (FR_OK != result)
                         {
-                            show_message_c ("   SD/FAT file fist creating error!");
+                            show_message_c ("FAT file fist creating error!");
                             drvBUZZER_peep (3);
                             //while (1) ;
                         }
                         else
                         {
-                            show_message_c ("   SD/FAT file fist creating");
+                            show_message_c ("FAT file fist creating");
                         }
                     }
-                    show_message_c ("   FILE open OK");
+                    show_message_c ("FAT file open OK");
                     //...
         
                     result = f_lseek (&file_test, 0);
                     if (FR_OK != result)
                     {
-                        show_message_c ("   FILE seek ERROR");
+                        show_message_c ("FAT seek ERROR");
                         //while (1) {};
                     }
                     else
                     {
-                        show_message_c ("   FILE seek OK");
+                        show_message_c ("FAT seek OK");
                         test_total_time_remain = HAL_GetTick ();
                         xsprintf (_str, "[%u.%u] START ADC COLLECT DATA", test_total_time_remain, SysTick->VAL);
                         show_message (_str);
-                        ADC_flag_ready = 1; //START!!!!
+                        ADC_init ();
+                        FMT.ADC_flag_ready = TRUE; //START!!!!
                         uint32_t delay_blink = HAL_GetTick();
                         while (1)
                         {
-                            if ((HAL_GetTick() - delay_blink) >= 5000) //status output
+                            if ((HAL_GetTick() - delay_blink) >= 1000) //status output
                             {
                                 delay_blink = HAL_GetTick();
-                                if (0 != ADC_flag_ready)
+                                if (FALSE != FMT.ADC_flag_ready)
                                 {
-                                    xsprintf (_str, "%u0 * 2 collect...", ADC_flag_ready);
+                                    xsprintf (_str, "%u0 * 2 collect...", FMT.cnt_wr);
                                     show_message (_str);
                                 }
                             }
                             if (TRUE == FIFO_gets (&FIFO_ADC, (uint8_t *)_str, ADC_BUF_ALL_SIZE))
                             {
-                                cnt_rd++;
+                                FMT.cnt_rd++;
                                 result = f_write (&file_test, (uint8_t *)&_str[0], ADC_BUF_ALL_SIZE, &fwcnt); // Çàïèñü êóñêà â ôàéë
                                 if ((FR_OK != result) || (fwcnt < str_size)) //îøèáêà, åñëè äèñê ïåðåïîëíåí
                                 {
-                                    show_message_c ("FILE wr ERROR");
+                                    show_message_c ("FAT file write ERROR");
                                     result = f_close (&file_test); //Update file size in here
                                     if (result != FR_OK)
                                     {
-                                        show_message_c ("FILE close ERROR");
+                                        show_message_c ("FILE file close ERROR");
                                     }
                                     while (1) {};
                                 }
-                                if (ADC_flag_ready >= (ADC_DATA_COLLECT + 1)) //ÒÎÌÓ ÙÎ
+                                if (FMT.cnt_wr >= (FMT.ADC_collect_size + 1)) //ÒÎÌÓ ÙÎ
                                 {
                                     result = f_close (&file_test); //Update file size in here
                                     if (result != FR_OK)
                                     {
                                         show_message_c ("FILE close ERROR");
                                     }
-                                    xsprintf (_str, "[%u.%u] ADC END COLLECT %u DATA", HAL_GetTick () - test_total_time_remain, SysTick->VAL, (ADC_flag_ready-1));
+                                    xsprintf (_str, "[%u.%u] ADC END COLLECT %u DATA", HAL_GetTick () - test_total_time_remain, SysTick->VAL, (FMT.cnt_wr - 1));
                                     show_message (_str);
-                                    ADC_flag_ready = 0;
+                                    FMT.ADC_flag_ready = FALSE;
                                     drvBUZZER_peep (1);
                                     break; //while (1) {};
                                 }
@@ -928,23 +801,77 @@ ALL_RESET:
                     } //else 
                     size8 = xsprintf (_str, "ADC collect data ready!:%u ", tmpu16);
                     break;
-            
-                default: 
-                    size8 = xsprintf (_str, "ERROR ");
+
+                case FMT_CMD_ADC_STOP: //2 - stop collect adc data
+                    //ADC_deinit ();
+                    HAL_TIM_Base_Stop (&htim2);
+                    FMT.ADC_flag_ready = FALSE; //START!!!!
+
+                    result = f_close (&file_test); //Update file size in here
+                    if (result != FR_OK)
+                    {
+                        show_message_c ("FAT file close ERROR");
+                    }
+                    xsprintf (_str, "[%u.%u] ADC END COLLECT %u DATA", HAL_GetTick () - test_total_time_remain, SysTick->VAL, (FMT.cnt_wr - 1));
+                    show_message_c (_str);
+
+                    drvBUZZER_peep (1);
+
+                    size8 = xsprintf (_str, "ADC collect stop!");
                     break;
-                }
+
+
+                    
+                case FMT_CMD_FAT_GET: //Gxxxx - return 64bytes
+                    if (FALSE == FMT.file_opened)
+                    {
+                        result = f_open (&file_test, file_name, FA_READ);
+                        if (FR_OK != result)
+                        {
+                            show_message_c ("   SD/FAT file fist open error!");
+                            drvBUZZER_peep (3);
+                            //while (1) ;
+                        }
+                        else
+                        {
+                            show_message_c ("FAT file open OK");
+                            FMT.file_opened = TRUE;
+                        }
+                    }
+                    //...
+        
+                    result = f_lseek (&file_test, digit_uint32);
+                    if (FR_OK != result)
+                    {
+                        show_message_c ("FAT seek ERROR");
+                        //while (1) {};
+                    }
+                    
+                    result = f_read (&file_test, (uint8_t *)&ch[0], 64, &frcnt);
+                    if ((FR_OK != result) || (frcnt < str_size))
+                    {
+                    }
+                    else
+                    {
+                        xsprintf (_str, "GET :%64s", &ch[0]);
+                        show_message_c (_str);
+                    }
+                    break;
+
+                default: 
+                    size8 = xsprintf (_str, "ERROR UNKNOWN!");
+                    break;
+                } // switch (IOBuf [0]) // parsing command
+                
                 // create respond
                 modParser_transmit (&parser, (uint8_t *)_str, size8, &IOBuf [0], &size8);
-                
                 //respond
                 if (HAL_UART_Transmit_IT (&huart1, &IOBuf[0], size8)!= HAL_OK)
                 {
                     Error_Handler();
                 }
             }//if (HAL_OK != HAL_UART_Transmit (&huart1, (uint8_t *)&buf[0], size, 0xFFFF))
-            
         }
-        
         
         test_core_ticks_new = GET_CORE_COUNT;
         if (test_core_ticks_new > test_core_ticks_old)
@@ -963,9 +890,6 @@ ALL_RESET:
     
     while (1)
     {
-
-	
-        
         
 	} //while (1)
   /* USER CODE END 2 */
@@ -977,9 +901,6 @@ ALL_RESET:
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-      
-
-	  
 
   }
   /* USER CODE END 3 */
@@ -1366,7 +1287,7 @@ static void MX_TIM12_Init(void)
   }
 
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 25;
+  sConfigOC.Pulse = 50;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim12, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)

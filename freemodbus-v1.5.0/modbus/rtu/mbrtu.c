@@ -210,7 +210,7 @@ eMBRTUSend( UCHAR ucSlaveAddress, const UCHAR * pucFrame, USHORT usLength )
         ucRTUBuf[usSndBufferCount++] = ( UCHAR )( usCRC16 & 0xFF );
         ucRTUBuf[usSndBufferCount++] = ( UCHAR )( usCRC16 >> 8 );
 
-        //usSndBufferCount++; //+ZAY_079 вот тут этот костыль обитает
+        usSndBufferCount++; //+ZAY_079 вот тут этот костыль обитает
 
         /* Activate the transmitter. */
         eSndState = STATE_TX_XMIT;

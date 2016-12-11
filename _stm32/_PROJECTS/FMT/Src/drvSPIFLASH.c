@@ -162,7 +162,7 @@ uint32_t drvSPIFLASH_getFlashChipSizeByChipId (void)
             return (SPIFLASH_SIZE_512_kB);
 
         // Atmel
-        case 0x1F4700: // 25DF321A
+        case 0x1F4700: // 25DF321
         case 0x1F4701: // 25DF321A
             return (SPIFLASH_SIZE_4_MB);
             
@@ -170,8 +170,6 @@ uint32_t drvSPIFLASH_getFlashChipSizeByChipId (void)
             return 0;
     }
 }
-
-
 
 
 /// Get the 64 bit unique identifier, stores it in UNIQUEID[8]. Only needs to be called once, ie after initialize

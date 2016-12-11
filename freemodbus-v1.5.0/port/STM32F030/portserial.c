@@ -174,6 +174,7 @@ BOOL xMBPortSerialPutByte (CHAR ucByte)
     return TRUE;
 }
 
+
 BOOL xMBPortSerialGetByte (CHAR * pucByte)
 {
     /* Return the byte in the UARTs receive buffer. This function is called
@@ -196,13 +197,11 @@ void USART1_IRQHandler(void)
      // Проверяем, действительно ли прерывание вызвано приемом байта
     if (((USART_ISR_RXNE & status) != 0) && ((USART1->CR1 & USART_CR1_RXNEIE) != 0))
     {
-        USART1_LED_INV; // инвертируем индикацию
 		pxMBFrameCBByteReceived ();
     }
      // Проверяем, действительно ли прерывание вызвано окончанием передачи
     if (((USART_ISR_TXE & status) != 0) && ((USART1->CR1 & USART_CR1_TXEIE) != 0))
     {
-        USART1_LED_INV; // инвертируем индикацию
         pxMBFrameCBTransmitterEmpty ();
     }
     if ((USART_ISR_NE & status)  /*!<Noise Error Flag */
@@ -210,9 +209,14 @@ void USART1_IRQHandler(void)
         || (USART_ISR_PE & status)  /*!<Parity Error */
         || (USART_ISR_ORE & status)) // /*!<OverRun Error */
     {
-    	//USART_ClearITPendingBit(USARTX, USART_IT_ORE);
-    	USART1->ISR &= ~USART_ISR_ORE;
-        USART1_errCount++;
+    	USART1_errCount++;
+        //USART_ClearITPendingBit(USARTX, USART_IT_ORE);
+    	USART1->ISR &= ~(USART_ISR_NE | 
+            USART_ISR_FE |
+            USART_ISR_PE |
+            USART_ISR_ORE);
+        
+        status = USART1->RDR;
     }
 }
 

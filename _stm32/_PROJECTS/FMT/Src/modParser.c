@@ -146,4 +146,3 @@ msg_t modParser_transmit (parser_t *pp, uint8_t *bufIN, uint8_t size_bufIN, uint
     
     return respond;  
 }
-

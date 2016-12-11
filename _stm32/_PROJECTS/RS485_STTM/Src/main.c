@@ -76,9 +76,9 @@ uint32_t test_to_be_performed_twice;
 //static volatile uint32_t ggg = 0;
 
 /* ----------------------- Static variables ---------------------------------*/
-volatile static const uint16_t compile_date[]    = { 2016, 12, 2 };
-volatile static const uint16_t compile_version[] = { 13 };
-volatile static const uint16_t firmware_date[]   = { 2016, 12, 2 };
+volatile static const uint16_t compile_date[]    = { 2016, 12, 10 };
+volatile static const uint16_t compile_version[] = { 14 };
+volatile static const uint16_t firmware_date[]   = { 2016, 12, 10 };
 //volatile static const char compile_date[12] = __DATE__;
 //volatile static const char compile_time[10] = __TIME__;
 
@@ -317,24 +317,12 @@ void halEEPROM_init (void)
         usRegHoldingBuf [HOLDING_REG_RS485_ADDRESS] = 10;
         usRegHoldingBuf [HOLDING_REG_RS485_BAUD] = 9600;
         usRegHoldingBuf [HOLDING_REG_RS485_PARITY] = MB_PAR_NONE;
-
         usRegHoldingBuf [HOLDING_REG_RS485_DELAY] = 10;
-
         regs2eeprom ();
-
         halEEPROM_commit ();
     }
-
     eeprom2regs ();
-
-    // APPLY SETTINGS!!!
-//    // TODO bodbusreg -> EEPROM (общаяя память, заполнение через цикл)
-//    usRegHoldingBuf [HOLDING_REG_RS485_ADDRESS] = halEEPROM_read16 (HOLDING_REG_RS485_ADDRESS);
-//    usRegHoldingBuf [HOLDING_REG_RS485_BAUD] = halEEPROM_read16 (HOLDING_REG_RS485_BAUD);
-//    usRegHoldingBuf [HOLDING_REG_RS485_PARITY] = halEEPROM_read16 (HOLDING_REG_RS485_PARITY);
-//    usRegHoldingBuf [HOLDING_REG_RS485_DELAY] = halEEPROM_read16 (HOLDING_REG_RS485_DELAY);
 }
-
 
 
 eMBErrorCode
@@ -618,9 +606,6 @@ uint16_t filter_median (uint16_t *adc_buf, uint32_t size, uint16_t sample)
 }
 
 
-
-
-
 #define GPIO_GPIO595_Port               GPIOA
 
 #define GPIO_GPIO595_DATA               GPIO_PIN_7
@@ -805,7 +790,7 @@ int main(void)
         RCC_AHBENR_GPIOBEN |
         RCC_AHBENR_GPIOFEN;
     // for test LED
-    GPIOB->MODER = (GPIOB->MODER & ~(GPIO_MODER_MODER1)) | (GPIO_MODER_MODER1_0); // DIR - Yelloy
+    //GPIOB->MODER = (GPIOB->MODER & ~(GPIO_MODER_MODER1)) | (GPIO_MODER_MODER1_0); // DIR - Yelloy
     //GPIOA->MODER = (GPIOA->MODER & ~(GPIO_MODER_MODER10)) | (GPIO_MODER_MODER10_0); //RX - Red
     //GPIOA->MODER = (GPIOA->MODER & ~(GPIO_MODER_MODER9)) | (GPIO_MODER_MODER9_0); // TX - Blue
 
@@ -900,6 +885,22 @@ int main(void)
         usRegInputBuf [TEST] =(uint16_t)cnt_test++;
         usRegInputBuf [INPUT_REG_RS485_ERRORS] = USART1_errCount;
 
+        if (USART1_errCount > 100)
+        {
+            BOOL eStatus = eMBInit (MB_RTU,
+                10,
+                0,
+                9600, //TODO size
+                MB_PAR_NONE);
+
+            if (eStatus != MB_ENOERR)
+            {
+                while (1) {};
+            }
+            USART1_errCount = 0;
+        }
+        
+        
         if (FUNCTION_RETURN_OK == modSysClock_timeout (&delay_get_temp, 1500, SYSCLOCK_GET_TIME_MS_1)) //(HAL_GetTick() - delay_set_zero) >= 1000)
         {
             int8_t tI;
@@ -922,14 +923,14 @@ int main(void)
             }
         }
 
-        if (FUNCTION_RETURN_OK == modSysClock_timeout (&delay_get_in, 23, SYSCLOCK_GET_TIME_MS_1)) //(HAL_GetTick() - delay_set_zero) >= 1000)
+        if (FUNCTION_RETURN_OK == modSysClock_timeout (&delay_get_in, 10, SYSCLOCK_GET_TIME_MS_1)) //(HAL_GetTick() - delay_set_zero) >= 1000)
         {
             //sys_595_out_set (); //not needed
 
             uint32_t i, tmp16 = 0;
             for (i = 0; i < 16; i++)
             {
-                ///tmp16 |= sys_595_in_get (i) << i;
+                tmp16 |= sys_595_in_get (i) << i;
                 tmp16 = tmp16 << 1;
             }
             usRegInputBuf [INPUT_REG_DIGITAL_IN] = tmp16;
